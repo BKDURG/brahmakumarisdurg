@@ -61,6 +61,168 @@
             margin: 0 auto;
             padding: 0 15px;
         }
+        /* Preloader Styles */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(142, 68, 173, 0.95), rgba(52, 152, 219, 0.95));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.preloader-content {
+    text-align: center;
+    color: white;
+    max-width: 500px;
+    padding: 2rem;
+}
+
+.preloader-logo {
+    margin-bottom: 1.5rem;
+}
+
+.preloader-logo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    animation: pulse 2s infinite ease-in-out;
+}
+
+.preloader-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.preloader-text p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.preloader-loader {
+    margin-bottom: 2rem;
+}
+
+.loader {
+    width: 60px;
+    height: 60px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid white;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    animation: spin 1s linear infinite;
+}
+
+.loader-text {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.preloader-quote {
+    font-style: italic;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    max-width: 400px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* Preloader Animations */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Loading Progress Bar Alternative */
+.preloader-progress {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    margin: 1.5rem 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: white;
+    border-radius: 2px;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* Alternative Preloader Styles */
+.preloader-alt {
+    background: linear-gradient(135deg, rgba(142, 68, 173, 0.95), rgba(52, 152, 219, 0.95));
+}
+
+.preloader-alt .preloader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.preloader-alt .loader-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 2rem;
+}
+
+.preloader-alt .lotus-loader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.preloader-alt .lotus-petal {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50% 0;
+    transform-origin: bottom right;
+}
+
+/* Responsive Preloader */
+@media (max-width: 768px) {
+    .preloader-text h2 {
+        font-size: 1.8rem;
+    }
+    
+    .preloader-text p {
+        font-size: 1rem;
+    }
+    
+    .preloader-quote {
+        font-size: 0.8rem;
+    }
+}
 
         /* Header Styles */
         header {
@@ -1054,6 +1216,25 @@
     </style>
 </head>
 <body>
+    <!-- Alternative Preloader with Progress Bar -->
+<div id="preloader" class="preloader">
+    <div class="preloader-content">
+        <div class="preloader-logo">
+            <img src="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/4-Shiv%20Baba%20Rays%20Transparent.webp?raw=true" alt="Brahmakumaris Logo">
+        </div>
+        <div class="preloader-text">
+            <h2>Brahmakumaris Durg</h2>
+            <p>Discover Your Inner Peace</p>
+        </div>
+        <div class="preloader-progress">
+            <div class="progress-bar"></div>
+        </div>
+        <div class="loader-text">Loading spiritual content... <span class="loading-percent">0%</span></div>
+        <div class="preloader-quote">
+            <p>"The soul who has realized God becomes like a lotus flower in a muddy pond – untouched by the impurity around it."</p>
+        </div>
+    </div>
+</div>
     <!-- Header -->
     <header class="header">
         <div class="header-wrapper">
@@ -1725,6 +1906,147 @@
         // Run animation on scroll
         window.addEventListener('scroll', animateOnScroll);
         animateOnScroll(); // Run once on page load
+
+        
+// Preloader functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const preloader = document.getElementById('preloader');
+    const progressBar = document.querySelector('.progress-bar');
+    
+    // Simulate loading progress
+    let progress = 0;
+    const interval = setInterval(function() {
+        if (progress < 90) {
+            progress += Math.random() * 15;
+            if (progress > 90) progress = 90;
+            
+            if (progressBar) {
+                progressBar.style.width = progress + '%';
+            }
+        } else {
+            clearInterval(interval);
+        }
+    }, 300);
+    
+    // Function to hide preloader
+    function hidePreloader() {
+        // Complete the progress bar
+        if (progressBar) {
+            progressBar.style.width = '100%';
+        }
+        
+        // Wait a moment then fade out
+        setTimeout(function() {
+            preloader.classList.add('fade-out');
+            
+            // Remove from DOM after animation completes
+            setTimeout(function() {
+                preloader.style.display = 'none';
+            }, 500);
+        }, 500);
+    }
+    
+    // Hide preloader when page is fully loaded
+    window.addEventListener('load', function() {
+        clearInterval(interval);
+        hidePreloader();
+    });
+    
+    // Fallback: hide preloader after maximum 5 seconds
+    setTimeout(function() {
+        if (preloader.style.display !== 'none') {
+            clearInterval(interval);
+            hidePreloader();
+        }
+    }, 5000);
+});
+
+// Alternative preloader with lotus animation
+function createLotusLoader() {
+    const container = document.createElement('div');
+    container.className = 'loader-container';
+    
+    const lotus = document.createElement('div');
+    lotus.className = 'lotus-loader';
+    
+    // Create 8 petals
+    for (let i = 0; i < 8; i++) {
+        const petal = document.createElement('div');
+        petal.className = 'lotus-petal';
+        petal.style.transform = `rotate(${i * 45}deg) translateY(-30px)`;
+        petal.style.animation = `pulse 2s ${i * 0.2}s infinite ease-in-out`;
+        lotus.appendChild(petal);
+    }
+    
+    container.appendChild(lotus);
+    return container;
+}
+
+// If you want to use the lotus loader instead, replace the loader div in the preloader with:
+// document.querySelector('.preloader-loader').innerHTML = '';
+// document.querySelector('.preloader-loader').appendChild(createLotusLoader());
+
+// Enhanced preloader with percentage
+document.addEventListener('DOMContentLoaded', function() {
+    const preloader = document.getElementById('preloader');
+    const progressBar = document.querySelector('.progress-bar');
+    const percentText = document.querySelector('.loading-percent');
+    
+    // Simulate loading progress
+    let progress = 0;
+    const interval = setInterval(function() {
+        if (progress < 90) {
+            progress += Math.random() * 15;
+            if (progress > 90) progress = 90;
+            
+            if (progressBar) {
+                progressBar.style.width = progress + '%';
+            }
+            
+            if (percentText) {
+                percentText.textContent = Math.floor(progress) + '%';
+            }
+        } else {
+            clearInterval(interval);
+        }
+    }, 300);
+    
+    // Function to hide preloader
+    function hidePreloader() {
+        // Complete the progress bar
+        if (progressBar) {
+            progressBar.style.width = '100%';
+        }
+        
+        if (percentText) {
+            percentText.textContent = '100%';
+        }
+        
+        // Wait a moment then fade out
+        setTimeout(function() {
+            preloader.classList.add('fade-out');
+            
+            // Remove from DOM after animation completes
+            setTimeout(function() {
+                preloader.style.display = 'none';
+            }, 500);
+        }, 500);
+    }
+    
+    // Hide preloader when page is fully loaded
+    window.addEventListener('load', function() {
+        clearInterval(interval);
+        hidePreloader();
+    });
+    
+    // Fallback: hide preloader after maximum 5 seconds
+    setTimeout(function() {
+        if (preloader.style.display !== 'none') {
+            clearInterval(interval);
+            hidePreloader();
+        }
+    }, 5000);
+});
     </script>
 </body>
 </html>

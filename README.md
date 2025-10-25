@@ -106,8 +106,8 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 Brahmakumaris Durg
 - Address: Brahmakumaris Center, Sector 6, Durg, Chhattisgarh 491001
-- Phone: +91 78945 61230
-- Email: durg@brahmakumaris.org
+- Phone: +91 78945 61230,+91 70007 14495
+- Email: brahmakumarisdurg@gmail.com
 
 ## 🙏 Acknowledgments
 

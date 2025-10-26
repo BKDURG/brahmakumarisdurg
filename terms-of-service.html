@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Brahmakumaris Durg</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #8e44ad;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, rgba(142, 68, 173, 0.8), rgba(52, 152, 219, 0.8));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0;
+            color: white;
+        }
+
+        .back-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+            padding: 3rem 0;
+            min-height: calc(100vh - 80px);
+        }
+
+        .terms-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .terms-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--bg-light);
+        }
+
+        .terms-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .terms-header p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .last-updated {
+            background: var(--bg-light);
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .terms-section {
+            margin-bottom: 3rem;
+        }
+
+        .terms-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .terms-section h2 i {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .terms-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            margin-top: 2rem;
+        }
+
+        .terms-section p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .terms-section ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .terms-section li {
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .warning-box h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, rgba(142, 68, 173, 0.1), rgba(52, 152, 219, 0.1));
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .info-box h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, rgba(142, 68, 173, 0.1), rgba(52, 152, 219, 0.1));
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .agreement-box {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .agreement-box h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: #bdc3c7;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .terms-container {
+                padding: 2rem 1.5rem;
+                margin: 1rem;
+            }
+
+            .terms-header h1 {
+                font-size: 2rem;
+            }
+
+            .terms-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            background: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 3rem;
+        }
+
+        .toc h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc a {
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toc a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .toc a i {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/Shiv%20baba.webp?raw=true" alt="Brahmakumaris Logo" alt="Brahmakumaris Logo">
+                    <h1>Brahmakumaris Durg</h1>
+                </div>
+                <button class="back-btn" onclick="goBack()">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Website
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <div class="terms-container">
+                <div class="terms-header">
+                    <h1>Terms of Service</h1>
+                    <p>Welcome to Brahmakumaris Durg. These Terms of Service govern your use of our website and services. By accessing our website, you agree to be bound by these terms.</p>
+                </div>
+
+                <div class="last-updated">
+                    <strong>Last Updated:</strong> December 15, 2023
+                </div>
+
+                <!-- Table of Contents -->
+                <div class="toc">
+                    <h3><i class="fas fa-list"></i> Table of Contents</h3>
+                    <ul>
+                        <li><a href="#acceptance"><i class="fas fa-check"></i> Acceptance of Terms</a></li>
+                        <li><a href="#website-use"><i class="fas fa-globe"></i> Website Use</a></li>
+                        <li><a href="#content"><i class="fas fa-file-alt"></i> Content and Intellectual Property</a></li>
+                        <li><a href="#user-conduct"><i class="fas fa-users"></i> User Conduct</a></li>
+                        <li><a href="#events"><i class="fas fa-calendar"></i> Events and Programs</a></li>
+                        <li><a href="#donations"><i class="fas fa-heart"></i> Donations and Contributions</a></li>
+                        <li><a href="#privacy"><i class="fas fa-shield-alt"></i> Privacy</a></li>
+                        <li><a href="#disclaimer"><i class="fas fa-exclamation-triangle"></i> Disclaimer</a></li>
+                        <li><a href="#limitation"><i class="fas fa-ban"></i> Limitation of Liability</a></li>
+                        <li><a href="#termination"><i class="fas fa-stop"></i> Termination</a></li>
+                        <li><a href="#disputes"><i class="fas fa-gavel"></i> Dispute Resolution</a></li>
+                        <li><a href="#governing"><i class="fas fa-balance-scale"></i> Governing Law</a></li>
+                        <li><a href="#changes"><i class="fas fa-sync-alt"></i> Changes to Terms</a></li>
+                    </ul>
+                </div>
+
+                <div class="agreement-box">
+                    <h3><i class="fas fa-handshake"></i> Agreement to Terms</h3>
+                    <p>By using our website and services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.</p>
+                </div>
+
+                <div class="terms-section" id="acceptance">
+                    <h2><i class="fas fa-check-circle"></i> Acceptance of Terms</h2>
+                    
+                    <p>By accessing and using the Brahmakumaris Durg website, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.</p>
+                    
+                    <p>These Terms of Service apply to all visitors, users, and others who access or use the service.</p>
+                </div>
+
+                <div class="terms-section" id="website-use">
+                    <h2><i class="fas fa-globe"></i> Website Use</h2>
+                    
+                    <h3>Permitted Use</h3>
+                    <p>You may use this website for lawful purposes and in accordance with these Terms of Service. You agree not to:</p>
+                    <ul>
+                        <li>Use the website for any unlawful purpose or to solicit others to perform unlawful acts</li>
+                        <li>Violate any international, federal, provincial, or local regulations or laws</li>
+                        <li>Infringe upon or violate our intellectual property rights or the intellectual property rights of others</li>
+                        <li>Harass, abuse, insult, harm, defame, or discriminate</li>
+                        <li>Submit false or misleading information</li>
+                        <li>Upload viruses or other malicious code</li>
+                        <li>Spam, phish, pharm, pretext, spider, crawl, or scrape</li>
+                        <li>Interfere with or circumvent the security features of the service</li>
+                    </ul>
+                </div>
+
+                <div class="terms-section" id="content">
+                    <h2><i class="fas fa-file-alt"></i> Content and Intellectual Property</h2>
+                    
+                    <h3>Our Content</h3>
+                    <p>All content on this website, including but not limited to text, graphics, logos, images, audio clips, digital downloads, and software, is the property of Brahmakumaris Durg or its content suppliers and is protected by international copyright laws.</p>
+                    
+                    <h3>User-Generated Content</h3>
+                    <p>Any content you submit to our website (comments, feedback, suggestions) becomes our property. You grant us a worldwide, non-exclusive, royalty-free, sublicensable, and transferable license to use, reproduce, distribute, prepare derivative works of, and display the content in connection with the service.</p>
+                    
+                    <div class="warning-box">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Important Notice</h3>
+                        <p>You may not use our content for commercial purposes without our express written permission. Unauthorized use of our intellectual property may violate copyright laws, trademark laws, and other applicable laws.</p>
+                    </div>
+                </div>
+
+                <div class="terms-section" id="user-conduct">
+                    <h2><i class="fas fa-users"></i> User Conduct</h2>
+                    
+                    <p>As a user of our website, you agree to:</p>
+                    <ul>
+                        <li>Respect the spiritual nature and purpose of our organization</li>
+                        <li>Maintain respectful and appropriate communication at all times</li>
+                        <li>Not engage in any form of harassment, discrimination, or hate speech</li>
+                        <li>Not share inappropriate, offensive, or harmful content</li>
+                        <li>Respect the privacy and rights of other users</li>
+                        <li>Not attempt to gain unauthorized access to our systems</li>
+                        <li>Not use the website for any commercial or promotional purposes without permission</li>
+                    </ul>
+                    
+                    <div class="info-box">
+                        <h3><i class="fas fa-info-circle"></i> Spiritual Community Guidelines</h3>
+                        <p>Our website is a spiritual sanctuary. We expect all users to maintain an atmosphere of peace, respect, and spiritual growth. Any behavior that contradicts these principles may result in immediate termination of access.</p>
+                    </div>
+                </div>
+
+                <div class="terms-section" id="events">
+                    <h2><i class="fas fa-calendar"></i> Events and Programs</h2>
+                    
+                    <h3>Event Registration</h3>
+                    <p>When you register for our events or programs:</p>
+                    <ul>
+                        <li>You must provide accurate and complete information</li>
+                        <li>You agree to follow all event guidelines and instructions</li>
+                        <li>You understand that participation is voluntary and at your own risk</li>
+                        <li>We reserve the right to refuse registration or remove participants for any reason</li>
+                    </ul>
+                    
+                    <h3>Event Cancellation</h3>
+                    <p>We reserve the right to cancel or reschedule events due to unforeseen circumstances. In such cases, we will make reasonable efforts to notify registered participants in advance.</p>
+                    
+                    <h3>Photography and Recording</h3>
+                    <p>By attending our events, you consent to being photographed or recorded. These materials may be used for promotional purposes, website content, or organizational documentation.</p>
+                </div>
+
+                <div class="terms-section" id="donations">
+                    <h2><i class="fas fa-heart"></i> Donations and Contributions</h2>
+                    
+                    <h3>Voluntary Donations</h3>
+                    <p>All donations to Brahmakumaris Durg are voluntary and non-refundable. We are a non-profit organization, and all donations support our spiritual activities and community services.</p>
+                    
+                    <h3>Donation Usage</h3>
+                    <p>Donations are used to:</p>
+                    <ul>
+                        <li>Maintain and operate our spiritual center</li>
+                        <li>Organize spiritual programs and events</li>
+                        <li>Provide free meditation and spiritual education</li>
+                        <li>Support community outreach activities</li>
+                        <li>Maintain our website and digital presence</li>
+                    </ul>
+                    
+                    <h3>No Goods or Services</h3>
+                    <p>Donations are charitable contributions and do not purchase any goods or services. No goods or services will be provided in exchange for donations.</p>
+                </div>
+
+                <div class="terms-section" id="privacy">
+                    <h2><i class="fas fa-shield-alt"></i> Privacy</h2>
+                    
+                    <p>Your privacy is important to us. Please review our Privacy Policy, which also governs your use of our service, to understand our practices.</p>
+                    
+                    <p>By using our website, you consent to the collection and use of information in accordance with our Privacy Policy.</p>
+                </div>
+
+                <div class="terms-section" id="disclaimer">
+                    <h2><i class="fas fa-exclamation-triangle"></i> Disclaimer</h2>
+                    
+                    <h3>Spiritual Guidance</h3>
+                    <p>The information provided on this website is for spiritual and educational purposes only. It is not intended as medical, psychological, or professional advice. Always consult qualified professionals for personal matters.</p>
+                    
+                    <h3>Accuracy of Information</h3>
+                    <p>While we strive to provide accurate and up-to-date information, we make no warranties or representations about the accuracy, completeness, or suitability of the information on this website.</p>
+                    
+                    <h3>External Links</h3>
+                    <p>Our website may contain links to third-party websites. We are not responsible for the content, privacy policies, or practices of these external sites.</p>
+                </div>
+
+                <div class="terms-section" id="limitation">
+                    <h2><i class="fas fa-ban"></i> Limitation of Liability</h2>
+                    
+                    <p>In no event shall Brahmakumaris Durg, our directors, employees, partners, agents, suppliers, or affiliates be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your use of the service.</p>
+                    
+                    <p>Our total liability to you for any cause of action whatsoever, and regardless of the form of the action, will at all times be limited to the amount paid, if any, by you to us during the six-month period prior to the cause of action.</p>
+                </div>
+
+                <div class="terms-section" id="termination">
+                    <h2><i class="fas fa-stop"></i> Termination</h2>
+                    
+                    <p>We may terminate or suspend your access immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.</p>
+                    
+                    <p>Upon termination, your right to use the service will cease immediately. All provisions of the Terms which by their nature should survive termination shall survive, including ownership provisions, warranty disclaimers, indemnity, and limitations of liability.</p>
+                </div>
+
+                <div class="terms-section" id="disputes">
+                    <h2><i class="fas fa-gavel"></i> Dispute Resolution</h2>
+                    
+                    <h3>Governing Law</h3>
+                    <p>These Terms of Service and any separate agreements whereby we provide you services shall be governed by and construed in accordance with the laws of India.</p>
+                    
+                    <h3>Resolution Process</h3>
+                    <p>Any disputes arising from these terms shall be resolved through peaceful dialogue and meditation, reflecting the spiritual principles of our organization. If resolution cannot be reached through these means, the dispute shall be subject to the jurisdiction of the courts in Durg, Chhattisgarh.</p>
+                </div>
+
+                <div class="terms-section" id="governing">
+                    <h2><i class="fas fa-balance-scale"></i> Governing Law</h2>
+                    
+                    <p>These Terms of Service and any separate agreements whereby we provide you services shall be governed by and construed in accordance with the laws of India, without regard to its conflict of law provisions.</p>
+                    
+                    <p>Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights.</p>
+                </div>
+
+                <div class="terms-section" id="changes">
+                    <h2><i class="fas fa-sync-alt"></i> Changes to Terms</h2>
+                    
+                    <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will try to provide at least 30 days notice prior to any new terms taking effect.</p>
+                    
+                    <p>What constitutes a material change will be determined at our sole discretion. By continuing to access or use our service after those revisions become effective, you agree to be bound by the revised terms.</p>
+                </div>
+
+                <div class="contact-info">
+                    <h3><i class="fas fa-envelope"></i> Contact Information</h3>
+                    <p>If you have any questions about these Terms of Service, please contact us:</p>
+                    <p><strong>Email:</strong> brahmakumarisdurg@gmail.com</p>
+                    <p><strong>Phone:</strong> +91 78945 61230</p>
+                    <p><strong>Address:</strong> Brahmakumaris Rajrishi Bhavan,Kelabadi, Durg, Chhattisgarh 491001</p>
+                </div>
+
+                <div class="agreement-box">
+                    <h3><i class="fas fa-om"></i> Spiritual Agreement</h3>
+                    <p>By using our website and services, you join us in creating a peaceful, harmonious spiritual community. Let us work together to spread peace, love, and spiritual wisdom throughout the world.</p>
+                    <p><strong>OM SHANTI</strong></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#contact">Contact</a>
+                    <a href="privacy-policy.html" target="_blank">Privacy Policy</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://t.me/brahmakumaris" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="https://www.facebook.com/brahmakumaris/" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/BrahmaKumaris" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/brahmakumaris/" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@brahmakumarisdurg3677" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Brahmakumaris Durg. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Scroll to Top functionality
+        window.addEventListener('scroll', function() {
+            const scrollButton = document.getElementById('scrollToTop');
+            if (window.pageYOffset > 300) {
+                scrollButton.classList.add('visible');
+            } else {
+                scrollButton.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Go back functionality
+        function goBack() {
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                window.location.href = 'index.html';
+            }
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add active state to TOC links based on scroll position
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.terms-section');
+            const tocLinks = document.querySelectorAll('.toc a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.style.fontWeight = 'normal';
+                if (link.getAttribute('href') === '#' + current) {
+                    link.style.fontWeight = 'bold';
+                }
+            });
+        });
+
+        // Print functionality
+        function printTerms() {
+            window.print();
+        }
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                goBack();
+            }
+        });
+
+        // Highlight current section in TOC on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const hash = window.location.hash;
+            if (hash) {
+                const target = document.querySelector(hash);
+                if (target) {
+                    setTimeout(() => {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }, 500);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

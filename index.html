@@ -4,1271 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brahmakumaris - Durg, Chhattisgarh | Spiritual Awakening</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <!-- Critical CSS Inlined -->
     <style>
-        :root {
-            --primary-color: #473775;
-            --secondary-color: #186ea8;
-            --accent-color: #e74c3c;
-            --text-dark: #2c3e50;
-            --text-light: #7f8c8d;
-            --bg-light: #f8f9fa;
-            --bg-white: #ffffff;
-            --bg-color: #ffffff;
-            --text-color: #2c3e50;
-            --shadow: 0 5px 15px rgba(19, 18, 18, 0.308);
-            --transition: all 0.3s linear;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text-dark);
-            margin: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 1rem;
-        }
-
-        a {
-            text-decoration: none;
-            color: #eedc3f;
-            transition: var(--transition);
-        }
-
-        a:hover {
-            color: #f7c467;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        /* Preloader Styles */
-.preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(142, 68, 173, 0.95), rgba(52, 152, 219, 0.95));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-
-.preloader.fade-out {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.preloader-content {
-    text-align: center;
-    color: white;
-    max-width: 500px;
-    padding: 2rem;
-}
-
-.preloader-logo {
-    margin-bottom: 1.5rem;
-}
-
-.preloader-logo img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    animation: pulse 2s infinite ease-in-out;
-}
-
-.preloader-text h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    font-weight: 700;
-}
-
-.preloader-text p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-}
-
-.preloader-loader {
-    margin-bottom: 2rem;
-}
-
-.loader {
-    width: 60px;
-    height: 60px;
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    border-top: 3px solid white;
-    border-radius: 50%;
-    margin: 0 auto 1rem;
-    animation: spin 1s linear infinite;
-}
-
-.loader-text {
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
-
-.preloader-quote {
-    font-style: italic;
-    font-size: 0.9rem;
-    opacity: 0.8;
-    max-width: 400px;
-    margin: 0 auto;
-    line-height: 1.5;
-}
-
-/* Preloader Animations */
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-
-/* Loading Progress Bar Alternative */
-.preloader-progress {
-    width: 100%;
-    height: 4px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 2px;
-    margin: 1.5rem 0;
-    overflow: hidden;
-}
-
-.progress-bar {
-    height: 100%;
-    background: white;
-    border-radius: 2px;
-    width: 0%;
-    transition: width 0.3s ease;
-}
-
-/* Alternative Preloader Styles */
-.preloader-alt {
-    background: linear-gradient(135deg, rgba(142, 68, 173, 0.95), rgba(52, 152, 219, 0.95));
-}
-
-.preloader-alt .preloader-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.preloader-alt .loader-container {
-    position: relative;
-    width: 120px;
-    height: 120px;
-    margin-bottom: 2rem;
-}
-
-.preloader-alt .lotus-loader {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-}
-
-.preloader-alt .lotus-petal {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    background: white;
-    border-radius: 50% 0;
-    transform-origin: bottom right;
-}
-
-/* Responsive Preloader */
-@media (max-width: 768px) {
-    .preloader-text h2 {
-        font-size: 1.8rem;
-    }
-    
-    .preloader-text p {
-        font-size: 1rem;
-    }
-    
-    .preloader-quote {
-        font-size: 0.8rem;
-    }
-}
-
-        /* Header Styles */
-        header {
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--secondary-color));
-            color: white;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(10px);
-            padding: 1rem 2rem;
-            position: sticky;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: var(--shadow);
-        }
-        .header-wrapper {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-        }
-
-        .logo h1 {
-            font-size: 1.5rem;
-            margin-bottom: 0;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: rgb(255, 255, 255);
-            font-weight: 500;
-            position: relative;
-            transform: translateY(-2px);
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: rgb(243, 82, 82);
-            transition: var(--transition);
-        }
-
-        nav a:hover::after {
-            width: 100%;
-            background: #ebc251;
-            transform: translateY(-2px);
-        }
-        
-        /* --- Mobile Menu Toggle (Hamburger) --- */
-        .mobile-menu-toggle {
-            display: none; /* Hidden by default, visible on mobile */
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-            z-index: 1001; /* Ensure it's above the menu */
-        }
-
-        .hamburger {
-            display: block;
-            position: relative;
-            width: 25px;
-            height: 3px;
-            background: #ffffff;
-            transition: var(--transition);
-        }
-
-        .hamburger::before,
-        .hamburger::after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 3px;
-            background: #ffffff;
-            transition: var(--transition);
-        }
-
-        .hamburger::before {
-            transform: translateY(-8px);
-        }
-
-        .hamburger::after {
-            transform: translateY(8px);
-            transition-duration: 0.8s ease-in-out;
-        }
-
-        /* Style for the 'X' when menu is open */
-        .mobile-menu-toggle.is-open .hamburger {
-            background: transparent;
-            transition: all 0.4s linear;
-        }
-        .mobile-menu-toggle.is-open .hamburger::before {
-            transform: rotate(45deg);
-            transition: all 0.8s linear;
-        }
-        .mobile-menu-toggle.is-open .hamburger::after {
-            transform: rotate(-45deg);
-        }
-
-
-        /* --- Navigation Menu --- */
-        .main-navigation {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 280px;
-            height: 100vh;
-            background-color: #2c3b6ef6;
-            color: #2c3e50;
-            border-radius: 24px;
-            padding-top: 5rem;
-            transform: translateX(100%);
-            transition: 0.3s ease-in-out;
-            box-shadow: -2px 0 5px rgba(0,0,0,0.1);
-        }
-
-        .main-navigation.is-open {
-            transform: translateX(-5px);
-        }
-        .main-navigation.is-open:hover {
-            background-color: #2c3b6ef6;
-            border-radius: 15px;
-        }
-
-        .nav-menu {
-            list-style: none;
-            color: #473775;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-menu li {
-            border-bottom: 1.5px solid #dfb288;
-            color: #2c3e50;
-        }
-
-        .nav-menu a {
-            display: block;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            color: #fffffff6;
-            font-weight: 500;
-            transition: background-color var(--transition);
-        }
-
-        .nav-menu a:hover {
-            background-color: #7c4d20;
-            border-radius: 14px;
-            color: #ffffff;
-        }
-
-        /* Daily Quote Section */
-        .daily-quote {
-            background: linear-gradient(135deg, #f3f3f3, #a3bce4);
-            padding: 80px 0 40px;
-            text-align: center;
-            margin-top: 70px;
-        }
-
-        .quote-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.918);
-            border-radius: 48px;
-            box-shadow: var(--shadow);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .quote-container::before {
-            content: '"';
-            position: absolute;
-            top: -20px;
-            left: 10px;
-            font-size: 8rem;
-            color: rgba(142, 68, 173, 0.1);
-            font-family: 'Playfair Display', serif;
-        }
-
-        .quote-text {
-            font-size: 1.3rem;
-            font-style: italic;
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .quote-author {
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-
-        .refresh-quote {
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 1rem;
-            transition: var(--transition);
-        }
-
-        .refresh-quote:hover {
-            background: var(--secondary-color);
-            transform: translateY(-2px);
-        }
-
-        /* Hero Section */
-        .hero {
-            background:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/anand%20sarovar.webp?raw=true');
-            background-size: cover;
-            background-position: center;
-            backdrop-filter: var(--shadow);
-            height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            
-        }
-
-        .hero-content h2 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            animation: fadeInUp 1s ease 0.2s both;
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--primary-color);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: var(--transition);
-            animation: fadeInUp 1s ease 0.4s both;
-        }
-
-        .btn:hover {
-            background: var(--secondary-color);
-            transform: translateY(-3px);
-        }
-
-        /* About Section */
-        .about {
-            padding: 80px 0;
-            background: linear-gradient(rgb(204, 224, 255), rgb(187, 214, 255));
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: var(--primary-color);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-text {
-            font-size: 1.1rem;
-        }
-
-        .about-image {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
-
-        .about-image img {
-            transition: var(--transition);
-        }
-
-        .about-image:hover img {
-            transform: scale(1.05);
-        }
-
-        /* God Concept Section */
-        .god-concept {
-            padding: 80px 0;
-            background:linear-gradient(rgb(187, 214, 255), rgb(204, 224, 255));
-        }
-
-        .concept-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .concept-image {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
-
-        .concept-text {
-            font-size: 1.1rem;
-        }
-
-        .concept-text h3 {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-        }
-
-        .concept-text ul {
-            list-style: none;
-            margin-left: 1.5rem;
-        }
-
-        .concept-text li {
-            margin-bottom: 0.8rem;
-            position: relative;
-        }
-
-        .concept-text li::before {
-            content: '•';
-            position: absolute;
-            left: -1.5rem;
-            color: var(--primary-color);
-            font-size: 1.5rem;
-        }
-
-        /* Events Section */
-        .events {
-            padding: 80px 0;
-            background: rgb(204, 224, 255);
-        }
-
-        .tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 2rem;
-        }
-
-        .tab-btn {
-            background: white;
-            border: none;
-            padding: 10px 20px;
-            margin: 0 5px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: var(--transition);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .tab-btn.active {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        .tab-btn:hover {
-            transform: translateY(-2px);
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-
-        .event-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .event-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .event-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .event-image {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .event-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .event-card:hover .event-image img {
-            transform: scale(1.05);
-        }
-
-        .event-details {
-            padding: 1.5rem;
-        }
-
-        .event-date {
-            display: inline-block;
-            background: var(--primary-color);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .event-title {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .event-description {
-            color: var(--text-light);
-            margin-bottom: 1rem;
-        }
-
-        .event-link {
-            color: var(--primary-color);
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        /* Gallery Section */
-        .gallery {
-            padding: 80px 0;
-            background: rgb(219, 233, 255);
-        }
-
-        .gallery-tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 2rem;
-        }
-
-        .gallery-tab-btn {
-            background: transparent;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            padding: 8px 20px;
-            margin: 0 5px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .gallery-tab-btn.active {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        .gallery-tab-btn:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        .gallery-content {
-            display: none;
-        }
-
-        .gallery-content.active {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1rem;
-        }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            height: 250px;
-            cursor: pointer;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
-        }
-
-        .gallery-icon {
-            color: white;
-            font-size: 2rem;
-        }
-
-        /* Video Gallery */
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .video-item {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-
-        .video-thumbnail {
-            position: relative;
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .video-thumbnail img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .play-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 60px;
-            height: 60px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .play-button:hover {
-            background: white;
-            transform: translate(-50%, -50%) scale(1.1);
-        }
-
-        .play-button i {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            margin-left: 5px;
-        }
-
-        .video-info {
-            padding: 1rem;
-            background: white;
-        }
-
-        .video-title {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .video-description {
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 80px 0;
-            background: var(--bg-light);
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-        }
-
-        .contact-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--primary-color);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .contact-details h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .contact-details p {
-            color: var(--text-light);
-        }
-
-        .contact-form {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: inherit;
-            transition: var(--transition);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .submit-btn {
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 5px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            width: 100%;
-        }
-
-        .submit-btn:hover {
-            background: var(--secondary-color);
-        }
-
-        /* Footer */
-        footer {
-            background: #2c3e50;
-            color: white;
-            padding: 50px 0 20px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 1rem;
-            color: white;
-        }
-
-        .footer-section p {
-            color: #bdc3c7;
-            margin-bottom: 1rem;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-links a {
-            color: #bdc3c7;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: white;
-            padding-left: 5px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            transition: var(--transition);
-        }
-
-        .social-link:hover {
-            background: var(--primary-color);
-            transform: translateY(-3px);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #bdc3c7;
-        }
-
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal.active {
-            display: flex;
-        }
-
-        .modal-content {
-            background: white;
-            border-radius: 10px;
-            max-width: 800px;
-            width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            width: 30px;
-            height: 30px;
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1;
-        }
-
-        .modal-body {
-            padding: 2rem;
-        }
-    /* --- Desktop Styles --- */
-        @media (min-width: 768px) {
-            .mobile-menu-toggle {
-                display: none; /* Hide hamburger on desktop */
-            }
-
-            .main-navigation {
-                position: static;
-                width: fit-content;
-                height: auto;
-                background: none;
-                padding: 0;
-                transform: translateX(4px);
-                box-shadow: none;
-            }
-
-            .nav-menu {
-                display: flex;
-                align-items: center;
-            }
-
-            .nav-menu li {
-                border: none;
-            }
-
-            .nav-menu a {
-                padding: 0.5rem 1rem;
-            }
-        }
-        
-        /* --- Page Content for Demo --- */
-        .content {
-            max-width: 800px;
-            margin: 3rem auto;
-            padding: 0 2rem;
-            line-height: 1.6;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .about-content,
-            .concept-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-content h2 {
-                font-size: 2.5rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .header-content {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .hero {
-                height: 400px;
-            }
-
-            .hero-content h2 {
-                font-size: 2rem;
-            }
-
-            .section-title h2 {
-                font-size: 2rem;
-            }
-
-            .tabs {
-                flex-wrap: wrap;
-            }
-
-            .gallery-tabs {
-                flex-wrap: wrap;
-            }
-            
-            /* Show mobile menu toggle on mobile */
-            .mobile-menu-toggle {
-                display: block;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .logo h1 {
-                font-size: 1.2rem;
-            }
-
-            .hero-content h2 {
-                font-size: 1.8rem;
-            }
-
-            .hero-content p {
-                font-size: 1rem;
-            }
-
-            .quote-text {
-                font-size: 1.1rem;
-            }
-        }
+        :root{--primary-color:#473775;--secondary-color:#186ea8;--accent-color:#e74c3c;--text-dark:#2c3e50;--text-light:#7f8c8d;--bg-light:#f8f9fa;--bg-white:#ffffff;--bg-color:#ffffff;--text-color:#2c3e50;--shadow:0 5px 15px rgba(19,18,18,.308);--transition:all .3s linear}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Montserrat',sans-serif;color:var(--text-dark);margin:0;background-color:var(--bg-color);color:var(--text-color);line-height:1.6;overflow-x:hidden}h1,h2,h3,h4,h5,h6{font-family:'Playfair Display',serif;margin-bottom:1rem}a{text-decoration:none;color:#eedc3f;transition:var(--transition)}a:hover{color:#f7c467}img{max-width:100%;height:auto}.container{width:100%;max-width:1200px;margin:0 auto;padding:0 15px}.preloader{position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(142,68,173,.95),rgba(52,152,219,.95));backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:flex;justify-content:center;align-items:center;z-index:9999;transition:opacity .5s ease,visibility .5s ease}.preloader.fade-out{opacity:0;visibility:hidden}.preloader-content{text-align:center;color:white;max-width:500px;padding:2rem}.preloader-logo{margin-bottom:1.5rem}.preloader-logo img{width:100px;height:100px;border-radius:50%;border:3px solid rgba(255,255,255,.3);box-shadow:0 5px 15px rgba(0,0,0,.2);animation:pulse 2s infinite ease-in-out}.preloader-text h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:.5rem;font-weight:700}.preloader-text p{font-size:1.1rem;margin-bottom:2rem;opacity:.9}.preloader-loader{margin-bottom:2rem}.loader{width:60px;height:60px;border:3px solid rgba(255,255,255,.3);border-top:3px solid white;border-radius:50%;margin:0 auto 1rem;animation:spin 1s linear infinite}.loader-text{font-size:.9rem;opacity:.8}.preloader-quote{font-style:italic;font-size:.9rem;opacity:.8;max-width:400px;margin:0 auto;line-height:1.5}@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}.preloader-progress{width:100%;height:4px;background:rgba(255,255,255,.2);border-radius:2px;margin:1.5rem 0;overflow:hidden}.progress-bar{height:100%;background:white;border-radius:2px;width:0%;transition:width .3s ease}@media (max-width:768px){.preloader-text h2{font-size:1.8rem}.preloader-text p{font-size:1rem}.preloader-quote{font-size:.8rem}}header{background:linear-gradient(90deg,var(--primary-color),var(--secondary-color),var(--secondary-color));color:white;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(10px);padding:1rem 2rem;position:sticky;width:100%;top:0;z-index:1000;box-shadow:var(--shadow)}.header-wrapper{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}.header-content{display:flex;justify-content:space-between;align-items:center}.logo{display:flex;align-items:center;gap:10px}.logo img{width:50px;height:50px;border-radius:50%}.logo h1{font-size:1.5rem;margin-bottom:0}nav ul{display:flex;list-style:none;gap:2rem}nav a{color:#fff;font-weight:500;position:relative;transform:translateY(-2px)}nav a::after{content:'';position:absolute;bottom:-5px;left:0;width:0;height:2px;background-color:rgb(243,82,82);transition:var(--transition)}nav a:hover::after{width:100%;background:#ebc251;transform:translateY(-2px)}.mobile-menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:.5rem;z-index:1001}.hamburger{display:block;position:relative;width:25px;height:3px;background:#fff;transition:var(--transition)}.hamburger::before,.hamburger::after{content:'';position:absolute;width:25px;height:3px;background:#fff;transition:var(--transition)}.hamburger::before{transform:translateY(-8px)}.hamburger::after{transform:translateY(8px);transition-duration:.8s ease-in-out}.mobile-menu-toggle.is-open .hamburger{background:transparent;transition:all .4s linear}.mobile-menu-toggle.is-open .hamburger::before{transform:rotate(45deg);transition:all .8s linear}.mobile-menu-toggle.is-open .hamburger::after{transform:rotate(-45deg)}.main-navigation{position:fixed;top:0;right:0;width:280px;height:100vh;background-color:#2c3b6ef6;color:#2c3e50;border-radius:24px;padding-top:5rem;transform:translateX(100%);transition:.3s ease-in-out;box-shadow:-2px 0 5px rgba(0,0,0,.1)}.main-navigation.is-open{transform:translateX(-5px)}.main-navigation.is-open:hover{background-color:#2c3b6ef6;border-radius:15px}.nav-menu{list-style:none;color:#473775;margin:0;padding:0}.nav-menu li{border-bottom:1.5px solid #dfb288;color:#2c3e50}.nav-menu a{display:block;padding:1rem 2rem;text-decoration:none;color:#fffffff6;font-weight:500;transition:background-color var(--transition)}.nav-menu a:hover{background-color:#7c4d20;border-radius:14px;color:#fff}.daily-quote{background:linear-gradient(135deg,#f3f3f3,#a3bce4);padding:80px 0 40px;text-align:center;margin-top:70px}.quote-container{max-width:800px;margin:0 auto;padding:2rem;background:rgba(255,255,255,.918);border-radius:48px;box-shadow:var(--shadow);position:relative;overflow:hidden}.quote-container::before{content:'"';position:absolute;top:-20px;left:10px;font-size:8rem;color:rgba(142,68,173,.1);font-family:'Playfair Display',serif}.quote-text{font-size:1.3rem;font-style:italic;margin-bottom:1rem;position:relative;z-index:1}.quote-author{font-weight:600;color:var(--primary-color)}.refresh-quote{background:var(--primary-color);color:white;border:none;padding:8px 15px;border-radius:5px;cursor:pointer;margin-top:1rem;transition:var(--transition)}.refresh-quote:hover{background:var(--secondary-color);transform:translateY(-2px)}.hero{background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url('https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/anand%20sarovar.webp?raw=true');background-size:cover;background-position:center;backdrop-filter:var(--shadow);height:500px;display:flex;align-items:center;justify-content:center;text-align:center;color:white}.hero-content h2{font-size:3rem;margin-bottom:1rem;animation:fadeInUp 1s ease}.hero-content p{font-size:1.2rem;max-width:700px;margin:0 auto 2rem;animation:fadeInUp 1s ease .2s both}.btn{display:inline-block;background:var(--primary-color);color:white;padding:12px 30px;border-radius:5px;font-weight:600;transition:var(--transition);animation:fadeInUp 1s ease .4s both}.btn:hover{background:var(--secondary-color);transform:translateY(-3px)}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}@media (max-width:768px){.mobile-menu-toggle{display:block}}@media (max-width:576px){.logo h1{font-size:1.2rem}.hero-content h2{font-size:1.8rem}.hero-content p{font-size:1rem}.quote-text{font-size:1.1rem}}
     </style>
+    
+    <!-- Non-critical CSS loaded asynchronously -->
+    <link rel="stylesheet" href="data:text/css;charset=utf-8,%40import%20url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap');" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap">
+    </noscript>
 </head>
 <body>
-    <!-- Alternative Preloader with Progress Bar -->
-<div id="preloader" class="preloader">
-    <div class="preloader-content">
-        <div class="preloader-logo">
-            <img src="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/4-Shiv%20Baba%20Rays%20Transparent.webp?raw=true" alt="Brahmakumaris Logo">
-        </div>
-        <div class="preloader-text">
-            <h2>Brahmakumaris Durg</h2>
-            <p>Discover Your Inner Peace</p>
-        </div>
-        <div class="preloader-progress">
-            <div class="progress-bar"></div>
-        </div>
-        <div class="loader-text">Loading spiritual content... <span class="loading-percent">0%</span></div>
-        <div class="preloader-quote">
-            <p>"The soul who has realized God becomes like a lotus flower in a muddy pond – untouched by the impurity around it."</p>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">
+                <img src="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/4-Shiv%20Baba%20Rays%20Transparent.webp?raw=true" alt="Brahmakumaris Logo" loading="lazy">
+            </div>
+            <div class="preloader-text">
+                <h2>Brahmakumaris Durg</h2>
+                <p>Discover Your Inner Peace</p>
+            </div>
+            <div class="preloader-progress">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="loader-text">Loading spiritual content... <span class="loading-percent">0%</span></div>
+            <div class="preloader-quote">
+                <p>"The soul who has realized God becomes like a lotus flower in a muddy pond – untouched by the impurity around it."</p>
+            </div>
         </div>
     </div>
-</div>
+
     <!-- Header -->
     <header class="header">
         <div class="header-wrapper">
-                <div class="logo">
-                    <img src="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/Shiv%20baba.webp?raw=true" alt="Brahmakumaris Logo">
-                    <h1>Brahmakumaris Durg</h1>
-                </div>
-                <!-- Mobile Menu Toggle Button -->
+            <div class="logo">
+                <img src="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/Shiv%20baba.webp?raw=true" alt="Brahmakumaris Logo" loading="lazy">
+                <h1>Brahmakumaris Durg</h1>
+            </div>
             <button class="mobile-menu-toggle" aria-controls="main-navigation" aria-expanded="false">
                 <span class="hamburger"></span>
                 <span class="sr-only">Menu</span>
             </button>
-
-             <!-- Main Navigation -->
-                <nav id="main-navigation" class="main-navigation">
-                    <ul class="nav-menu">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#god-concept">God Concept</a></li>
-                        <li><a href="#events">Events</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
+            <nav id="main-navigation" class="main-navigation">
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#god-concept">God Concept</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
@@ -1308,7 +102,7 @@
                     <p>Through the practice of Rajyoga meditation, we help individuals connect with their inner selves and the Supreme Soul, leading to a life of peace, purity, and purpose.</p>
                 </div>
                 <div class="about-image">
-                    <img src="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/pandav%20bhavan.webp?raw=true">
+                    <img src="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/pandav%20bhavan.webp?raw=true" loading="lazy" width="600" height="400" alt="Pandav Bhavan">
                 </div>
             </div>
         </div>
@@ -1322,7 +116,7 @@
             </div>
             <div class="concept-content">
                 <div class="concept-image">
-                    <img src="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/4-Shiv%20Baba%20Rays%20Transparent.webp?raw=true" alt="Shiva - The Supreme Soul">
+                    <img src="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/4-Shiv%20Baba%20Rays%20Transparent.webp?raw=true" loading="lazy" width="600" height="400" alt="Shiva - The Supreme Soul">
                 </div>
                 <div class="concept-text">
                     <h3>Understanding <b>God Shiva - The Supreme Soul</b></h3>
@@ -1356,7 +150,7 @@
                 <div class="event-grid">
                     <div class="event-card">
                         <div class="event-image">
-                            <img src="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/yogi.webp?raw=true" alt="Meditation Camp">
+                            <img src="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/yogi.webp?raw=true" loading="lazy" width="400" height="200" alt="Meditation Camp">
                         </div>
                         <div class="event-details">
                             <span class="event-date"><b>LIVE</b></span>
@@ -1368,7 +162,7 @@
                     
                     <div class="event-card">
                         <div class="event-image">
-                            <img src="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/_EV_Girish_Bhai.webp?raw=true" alt="Spiritual Lecture">
+                            <img src="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/_EV_Girish_Bhai.webp?raw=true" loading="lazy" width="400" height="200" alt="Spiritual Lecture">
                         </div>
                         <div class="event-details">
                             <span class="event-date"><b>20 December 2025</b></span>
@@ -1380,7 +174,7 @@
                     
                     <div class="event-card">
                         <div class="event-image">
-                            <img src="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/NMBA%20Logo.webp?raw=true" alt="International Yoga Day">
+                            <img src="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/NMBA%20Logo.webp?raw=true" loading="lazy" width="400" height="200" alt="International Yoga Day">
                         </div>
                         <div class="event-details">
                             <span class="event-date"><b>LIVE</b></span>
@@ -1396,7 +190,7 @@
                 <div class="event-grid">
                     <div class="event-card">
                         <div class="event-image">
-                            <img src="https://picsum.photos/seed/peaceevent/400/200.jpg" alt="World Peace Event">
+                            <img src="https://picsum.photos/seed/peaceevent/400/200.jpg" loading="lazy" width="400" height="200" alt="World Peace Event">
                         </div>
                         <div class="event-details">
                             <span class="event-date">June 10, 2023</span>
@@ -1408,7 +202,7 @@
                     
                     <div class="event-card">
                         <div class="event-image">
-                            <img src="https://picsum.photos/seed/youthretreat/400/200.jpg" alt="Youth Retreat">
+                            <img src="https://picsum.photos/seed/youthretreat/400/200.jpg" loading="lazy" width="400" height="200" alt="Youth Retreat">
                         </div>
                         <div class="event-details">
                             <span class="event-date">May 20, 2023</span>
@@ -1420,7 +214,7 @@
                     
                     <div class="event-card">
                         <div class="event-image">
-                            <img src="https://picsum.photos/seed/mothersday/400/200.jpg" alt="Mother's Day Event">
+                            <img src="https://picsum.photos/seed/mothersday/400/200.jpg" loading="lazy" width="400" height="200" alt="Mother's Day Event">
                         </div>
                         <div class="event-details">
                             <span class="event-date">May 14, 2023</span>
@@ -1448,56 +242,56 @@
             <div class="gallery-content active" id="photos">
                 <div class="gallery-grid">
                     <div class="gallery-item">
-                        <img src="https://picsum.photos/seed/meditation1/400/400.jpg" alt="Meditation Session">
+                        <img src="https://picsum.photos/seed/meditation1/400/400.jpg" loading="lazy" width="400" height="400" alt="Meditation Session">
                         <div class="gallery-overlay">
                             <i class="fas fa-search-plus gallery-icon"></i>
                         </div>
                     </div>
                     
                     <div class="gallery-item">
-                        <img src="https://picsum.photos/seed/center1/400/400.jpg" alt="Center View">
+                        <img src="https://picsum.photos/seed/center1/400/400.jpg" loading="lazy" width="400" height="400" alt="Center View">
                         <div class="gallery-overlay">
                             <i class="fas fa-search-plus gallery-icon"></i>
                         </div>
                     </div>
                     
                     <div class="gallery-item">
-                        <img src="https://picsum.photos/seed/event1/400/400.jpg" alt="Spiritual Event">
+                        <img src="https://picsum.photos/seed/event1/400/400.jpg" loading="lazy" width="400" height="400" alt="Spiritual Event">
                         <div class="gallery-overlay">
                             <i class="fas fa-search-plus gallery-icon"></i>
                         </div>
                     </div>
                     
                     <div class="gallery-item">
-                        <img src="https://picsum.photos/seed/lecture1/400/400.jpg" alt="Spiritual Lecture">
+                        <img src="https://picsum.photos/seed/lecture1/400/400.jpg" loading="lazy" width="400" height="400" alt="Spiritual Lecture">
                         <div class="gallery-overlay">
                             <i class="fas fa-search-plus gallery-icon"></i>
                         </div>
                     </div>
                     
                     <div class="gallery-item">
-                        <img src="https://picsum.photos/seed/ceremony1/400/400.jpg" alt="Spiritual Ceremony">
+                        <img src="https://picsum.photos/seed/ceremony1/400/400.jpg" loading="lazy" width="400" height="400" alt="Spiritual Ceremony">
                         <div class="gallery-overlay">
                             <i class="fas fa-search-plus gallery-icon"></i>
                         </div>
                     </div>
                     
                     <div class="gallery-item">
-                        <img src="https://picsum.photos/seed/yoga1/400/400.jpg" alt="Yoga Session">
+                        <img src="https://picsum.photos/seed/yoga1/400/400.jpg" loading="lazy" width="400" height="400" alt="Yoga Session">
                         <div class="gallery-overlay">
                             <i class="fas fa-search-plus gallery-icon"></i>
                         </div>
                     </div>
                     
                     <div class="gallery-item">
-                        <img src="https://picsum.photos/seed/celebration1/400/400.jpg" alt="Spiritual Celebration">
+                        <img src="https://picsum.photos/seed/celebration1/400/400.jpg" loading="lazy" width="400" height="400" alt="Spiritual Celebration">
                         <div class="gallery-overlay">
                             <i class="fas fa-search-plus gallery-icon"></i>
                         </div>
                     </div>
                     
                     <div class="gallery-item">
-                        <img src="https://picsum.photos/seed/retreat1/400/400.jpg" alt="Spiritual Retreat">
+                        <img src="https://picsum.photos/seed/retreat1/400/400.jpg" loading="lazy" width="400" height="400" alt="Spiritual Retreat">
                         <div class="gallery-overlay">
                             <i class="fas fa-search-plus gallery-icon"></i>
                         </div>
@@ -1509,7 +303,7 @@
                 <div class="video-grid">
                     <div class="video-item">
                         <div class="video-thumbnail">
-                            <img src="https://picsum.photos/seed/video1/400/200.jpg" alt="Video Thumbnail">
+                            <img src="https://picsum.photos/seed/video1/400/200.jpg" loading="lazy" width="400" height="200" alt="Video Thumbnail">
                             <div class="play-button">
                                 <i class="fas fa-play"></i>
                             </div>
@@ -1522,7 +316,7 @@
                     
                     <div class="video-item">
                         <div class="video-thumbnail">
-                            <img src="https://picsum.photos/seed/video2/400/200.jpg" alt="Video Thumbnail">
+                            <img src="https://picsum.photos/seed/video2/400/200.jpg" loading="lazy" width="400" height="200" alt="Video Thumbnail">
                             <div class="play-button">
                                 <i class="fas fa-play"></i>
                             </div>
@@ -1535,7 +329,7 @@
                     
                     <div class="video-item">
                         <div class="video-thumbnail">
-                            <img src="https://picsum.photos/seed/video3/400/200.jpg" alt="Video Thumbnail">
+                            <img src="https://picsum.photos/seed/video3/400/200.jpg" loading="lazy" width="400" height="200" alt="Video Thumbnail">
                             <div class="play-button">
                                 <i class="fas fa-play"></i>
                             </div>
@@ -1565,9 +359,7 @@
                         <div class="contact-details">
                             <h3>Address</h3>
                             <p>Brahmakumaris Rajrishi Bhavan, Kelabadi, Durg, Chhattisgarh 491001</p>
-                            <p>Anand Sarovar, Baghera, Ward No-56, Katni Nagpura Road, Durg, 491001, Chhattisgarh, India
-
-</p>
+                            <p>Anand Sarovar, Baghera, Ward No-56, Katni Nagpura Road, Durg, 491001, Chhattisgarh, India</p>
                         </div>
                     </div>
                     
@@ -1700,34 +492,34 @@
         </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Select DOM elements
+    <!-- Remaining CSS loaded asynchronously -->
+    <link rel="stylesheet" href="data:text/css;charset=utf-8,section.about%7Bpadding:80px%200;background:linear-gradient(rgb(204%2C224%2C255)%2Crgb(187%2C214%2C255))%7D.section-title%7Btext-align:center;margin-bottom:3rem;position:relative%7D.section-title%20h2%7Bfont-size:2.5rem;color:var(--primary-color);display:inline-block;padding-bottom:10px%7D.section-title%20h2::after%7Bcontent:'';position:absolute;bottom:0;left:50%25;transform:translateX(-50%25);width:80px;height:3px;background:var(--primary-color)%7D.about-content%7Bdisplay:grid;grid-template-columns:1fr%201fr;gap:3rem;align-items:center%7D.about-text%7Bfont-size:1.1rem%7D.about-image%7Bposition:relative;overflow:hidden;border-radius:10px;box-shadow:var(--shadow)%7D.about-image%20img%7Btransition:var(--transition)%7D.about-image:hover%20img%7Btransform:scale(1.05)%7Dsection.god-concept%7Bpadding:80px%200;background:linear-gradient(rgb(187%2C214%2C255)%2Crgb(204%2C224%2C255))%7D.concept-content%7Bdisplay:grid;grid-template-columns:1fr%201fr;gap:3rem;align-items:center%7D.concept-image%7Bposition:relative;overflow:hidden;border-radius:10px;box-shadow:var(--shadow)%7D.concept-text%7Bfont-size:1.1rem%7D.concept-text%20h3%7Bcolor:var(--primary-color);margin-bottom:1.5rem%7D.concept-text%20ul%7Blist-style:none;margin-left:1.5rem%7D.concept-text%20li%7Bmargin-bottom:.8rem;position:relative%7D.concept-text%20li::before%7Bcontent:'%E2%80%A2';position:absolute;left:-1.5rem;color:var(--primary-color);font-size:1.5rem%7Dsection.events%7Bpadding:80px%200;background:rgb(204%2C224%2C255)%7D.tabs%7Bdisplay:flex;justify-content:center;margin-bottom:2rem%7D.tab-btn%7Bbackground:white;border:none;padding:10px%2020px;margin:0%205px;border-radius:5px;cursor:pointer;font-weight:600;transition:var(--transition);box-shadow:0%202px%205px%20rgba(0%2C0%2C0%2C.1)%7D.tab-btn.active%7Bbackground:var(--primary-color);color:white%7D.tab-btn:hover%7Btransform:translateY(-2px)%7D.tab-content%7Bdisplay:none%7D.tab-content.active%7Bdisplay:block;animation:fadeIn%20.5s%20ease%7D.event-grid%7Bdisplay:grid;grid-template-columns:repeat(auto-fill%2Cminmax(300px%2C1fr));gap:2rem%7D.event-card%7Bbackground:white;border-radius:10px;overflow:hidden;box-shadow:var(--shadow);transition:var(--transition)%7D.event-card:hover%7Btransform:translateY(-5px);box-shadow:0%2010px%2020px%20rgba(0%2C0%2C0%2C.1)%7D.event-image%7Bheight:200px;overflow:hidden%7D.event-image%20img%7Bwidth:100%25;height:100%25;object-fit:cover;transition:var(--transition)%7D.event-card:hover%20.event-image%20img%7Btransform:scale(1.05)%7D.event-details%7Bpadding:1.5rem%7D.event-date%7Bdisplay:inline-block;background:var(--primary-color);color:white;padding:5px%2010px;border-radius:5px;font-size:.9rem;margin-bottom:1rem%7D.event-title%7Bfont-size:1.2rem;margin-bottom:.5rem%7D.event-description%7Bcolor:var(--text-light);margin-bottom:1rem%7D.event-link%7Bcolor:var(--primary-color);font-weight:600;display:inline-flex;align-items:center;gap:5px%7Dsection.gallery%7Bpadding:80px%200;background:rgb(219%2C233%2C255)%7D.gallery-tabs%7Bdisplay:flex;justify-content:center;margin-bottom:2rem%7D.gallery-tab-btn%7Bbackground:transparent;border:2px%20solid%20var(--primary-color);color:var(--primary-color);padding:8px%2020px;margin:0%205px;border-radius:5px;cursor:pointer;font-weight:600;transition:var(--transition)%7D.gallery-tab-btn.active%7Bbackground:var(--primary-color);color:white%7D.gallery-tab-btn:hover%7Bbackground:var(--primary-color);color:white%7D.gallery-content%7Bdisplay:none%7D.gallery-content.active%7Bdisplay:block;animation:fadeIn%20.5s%20ease%7D.gallery-grid%7Bdisplay:grid;grid-template-columns:repeat(auto-fill%2Cminmax(250px%2C1fr));gap:1rem%7D.gallery-item%7Bposition:relative;overflow:hidden;border-radius:10px;box-shadow:var(--shadow);height:250px;cursor:pointer%7D.gallery-item%20img%7Bwidth:100%25;height:100%25;object-fit:cover;transition:var(--transition)%7D.gallery-item:hover%20img%7Btransform:scale(1.1)%7D.gallery-overlay%7Bposition:absolute;top:0;left:0;width:100%25;height:100%25;background:rgba(0%2C0%2C0%2C.7);display:flex;align-items:center;justify-content:center;opacity:0;transition:var(--transition)%7D.gallery-item:hover%20.gallery-overlay%7Bopacity:1%7D.gallery-icon%7Bcolor:white;font-size:2rem%7D.video-grid%7Bdisplay:grid;grid-template-columns:repeat(auto-fill%2Cminmax(350px%2C1fr));gap:2rem%7D.video-item%7Bposition:relative;border-radius:10px;overflow:hidden;box-shadow:var(--shadow)%7D.video-thumbnail%7Bposition:relative;height:200px;overflow:hidden%7D.video-thumbnail%20img%7Bwidth:100%25;height:100%25;object-fit:cover%7D.play-button%7Bposition:absolute;top:50%25;left:50%25;transform:translate(-50%25%2C-50%25);width:60px;height:60px;background:rgba(255%2C255%2C255%2C.8);border-radius:50%25;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:var(--transition)%7D.play-button:hover%7Bbackground:white;transform:translate(-50%25%2C-50%25)%20scale(1.1)%7D.play-button%20i%7Bcolor:var(--primary-color);font-size:1.5rem;margin-left:5px%7D.video-info%7Bpadding:1rem;background:white%7D.video-title%7Bfont-size:1.1rem;margin-bottom:.5rem%7D.video-description%7Bcolor:var(--text-light);font-size:.9rem%7Dsection.contact%7Bpadding:80px%200;background:var(--bg-light)%7D.contact-content%7Bdisplay:grid;grid-template-columns:1fr%201fr;gap:3rem%7D.contact-info%7Bdisplay:flex;flex-direction:column;gap:1.5rem%7D.contact-item%7Bdisplay:flex;align-items:flex-start;gap:1rem%7D.contact-icon%7Bwidth:40px;height:40px;background:var(--primary-color);color:white;border-radius:50%25;display:flex;align-items:center;justify-content:center;flex-shrink:0%7D.contact-details%20h3%7Bfont-size:1.1rem;margin-bottom:.3rem%7D.contact-details%20p%7Bcolor:var(--text-light)%7D.contact-form%7Bbackground:white;padding:2rem;border-radius:10px;box-shadow:var(--shadow)%7D.form-group%7Bmargin-bottom:1.5rem%7D.form-group%20label%7Bdisplay:block;margin-bottom:.5rem;font-weight:600%7D.form-group%20input%2C.form-group%20textarea%7Bwidth:100%25;padding:12px;border:1px%20solid%20%23ddd;border-radius:5px;font-family:inherit;transition:var(--transition)%7D.form-group%20input:focus%2C.form-group%20textarea:focus%7Boutline:none;border-color:var(--primary-color)%7D.form-group%20textarea%7Bresize:vertical;min-height:120px%7D.submit-btn%7Bbackground:var(--primary-color);color:white;border:none;padding:12px%2030px;border-radius:5px;font-weight:600;cursor:pointer;transition:var(--transition);width:100%25%7D.submit-btn:hover%7Bbackground:var(--secondary-color)%7Dfooter%7Bbackground:%232c3e50;color:white;padding:50px%200%2020px%7D.footer-content%7Bdisplay:grid;grid-template-columns:repeat(auto-fit%2Cminmax(250px%2C1fr));gap:2rem;margin-bottom:2rem%7D.footer-section%20h3%7Bmargin-bottom:1rem;color:white%7D.footer-section%20p%7Bcolor:%23bdc3c7;margin-bottom:1rem%7D.footer-links%7Blist-style:none%7D.footer-links%20li%7Bmargin-bottom:.5rem%7D.footer-links%20a%7Bcolor:%23bdc3c7;transition:var(--transition)%7D.footer-links%20a:hover%7Bcolor:white;padding-left:5px%7D.social-links%7Bdisplay:flex;gap:1rem;margin-top:1rem%7D.social-link%7Bwidth:40px;height:40px;background:rgba(255%2C255%2C255%2C.1);border-radius:50%25;display:flex;align-items:center;justify-content:center;color:white;transition:var(--transition)%7D.social-link:hover%7Bbackground:var(--primary-color);transform:translateY(-3px)%7D.footer-bottom%7Btext-align:center;padding-top:20px;border-top:1px%20solid%20rgba(255%2C255%2C255%2C.1);color:%23bdc3c7%7D.modal%7Bdisplay:none;position:fixed;top:0;left:0;width:100%25;height:100%25;background:rgba(0%2C0%2C0%2C.8);z-index:2000;align-items:center;justify-content:center%7D.modal.active%7Bdisplay:flex%7D.modal-content%7Bbackground:white;border-radius:10px;max-width:800px;width:90%25;max-height:90vh;overflow-y:auto;position:relative%7D.modal-close%7Bposition:absolute;top:15px;right:15px;width:30px;height:30px;background:var(--primary-color);color:white;border:none;border-radius:50%25;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:1%7D.modal-body%7Bpadding:2rem%7D%40media%20(min-width:768px)%7B.mobile-menu-toggle%7Bdisplay:none%7D.main-navigation%7Bposition:static;width:fit-content;height:auto;background:none;padding:0;transform:translateX(4px);box-shadow:none%7D.nav-menu%7Bdisplay:flex;align-items:center%7D.nav-menu%20li%7Bborder:none%7D.nav-menu%20a%7Bpadding:.5rem%201rem%7D%7D.content%7Bmax-width:800px;margin:3rem%20auto;padding:0%202rem;line-height:1.6%7D%40media%20(max-width:992px)%7B.about-content%2C.concept-content%2C.contact-content%7Bgrid-template-columns:1fr%7D.hero-content%20h2%7Bfont-size:2.5rem%7D%7D%40media%20(max-width:768px)%7Bnav%20ul%7Bflex-direction:column;gap:1rem%7D.header-content%7Bflex-direction:column;gap:1rem%7D.hero%7Bheight:400px%7D.hero-content%20h2%7Bfont-size:2rem%7D.section-title%20h2%7Bfont-size:2rem%7D.tabs%7Bflex-wrap:wrap%7D.gallery-tabs%7Bflex-wrap:wrap%7D.mobile-menu-toggle%7Bdisplay:block%7D%7D" media="print" onload="this.media='all'">
+    <noscript>
+        <style>
+            section.about{padding:80px 0;background:linear-gradient(rgb(204,224,255),rgb(187,214,255))}.section-title{text-align:center;margin-bottom:3rem;position:relative}.section-title h2{font-size:2.5rem;color:var(--primary-color);display:inline-block;padding-bottom:10px}.section-title h2::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:80px;height:3px;background:var(--primary-color)}.about-content{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}.about-text{font-size:1.1rem}.about-image{position:relative;overflow:hidden;border-radius:10px;box-shadow:var(--shadow)}.about-image img{transition:var(--transition)}.about-image:hover img{transform:scale(1.05)}section.god-concept{padding:80px 0;background:linear-gradient(rgb(187,214,255),rgb(204,224,255))}.concept-content{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}.concept-image{position:relative;overflow:hidden;border-radius:10px;box-shadow:var(--shadow)}.concept-text{font-size:1.1rem}.concept-text h3{color:var(--primary-color);margin-bottom:1.5rem}.concept-text ul{list-style:none;margin-left:1.5rem}.concept-text li{margin-bottom:.8rem;position:relative}.concept-text li::before{content:'•';position:absolute;left:-1.5rem;color:var(--primary-color);font-size:1.5rem}section.events{padding:80px 0;background:rgb(204,224,255)}.tabs{display:flex;justify-content:center;margin-bottom:2rem}.tab-btn{background:white;border:none;padding:10px 20px;margin:0 5px;border-radius:5px;cursor:pointer;font-weight:600;transition:var(--transition);box-shadow:0 2px 5px rgba(0,0,0,.1)}.tab-btn.active{background:var(--primary-color);color:white}.tab-btn:hover{transform:translateY(-2px)}.tab-content{display:none}.tab-content.active{display:block;animation:fadeIn .5s ease}.event-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2rem}.event-card{background:white;border-radius:10px;overflow:hidden;box-shadow:var(--shadow);transition:var(--transition)}.event-card:hover{transform:translateY(-5px);box-shadow:0 10px 20px rgba(0,0,0,.1)}.event-image{height:200px;overflow:hidden}.event-image img{width:100%;height:100%;object-fit:cover;transition:var(--transition)}.event-card:hover .event-image img{transform:scale(1.05)}.event-details{padding:1.5rem}.event-date{display:inline-block;background:var(--primary-color);color:white;padding:5px 10px;border-radius:5px;font-size:.9rem;margin-bottom:1rem}.event-title{font-size:1.2rem;margin-bottom:.5rem}.event-description{color:var(--text-light);margin-bottom:1rem}.event-link{color:var(--primary-color);font-weight:600;display:inline-flex;align-items:center;gap:5px}section.gallery{padding:80px 0;background:rgb(219,233,255)}.gallery-tabs{display:flex;justify-content:center;margin-bottom:2rem}.gallery-tab-btn{background:transparent;border:2px solid var(--primary-color);color:var(--primary-color);padding:8px 20px;margin:0 5px;border-radius:5px;cursor:pointer;font-weight:600;transition:var(--transition)}.gallery-tab-btn.active{background:var(--primary-color);color:white}.gallery-tab-btn:hover{background:var(--primary-color);color:white}.gallery-content{display:none}.gallery-content.active{display:block;animation:fadeIn .5s ease}.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem}.gallery-item{position:relative;overflow:hidden;border-radius:10px;box-shadow:var(--shadow);height:250px;cursor:pointer}.gallery-item img{width:100%;height:100%;object-fit:cover;transition:var(--transition)}.gallery-item:hover img{transform:scale(1.1)}.gallery-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;opacity:0;transition:var(--transition)}.gallery-item:hover .gallery-overlay{opacity:1}.gallery-icon{color:white;font-size:2rem}.video-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:2rem}.video-item{position:relative;border-radius:10px;overflow:hidden;box-shadow:var(--shadow)}.video-thumbnail{position:relative;height:200px;overflow:hidden}.video-thumbnail img{width:100%;height:100%;object-fit:cover}.play-button{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;background:rgba(255,255,255,.8);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:var(--transition)}.play-button:hover{background:white;transform:translate(-50%,-50%) scale(1.1)}.play-button i{color:var(--primary-color);font-size:1.5rem;margin-left:5px}.video-info{padding:1rem;background:white}.video-title{font-size:1.1rem;margin-bottom:.5rem}.video-description{color:var(--text-light);font-size:.9rem}section.contact{padding:80px 0;background:var(--bg-light)}.contact-content{display:grid;grid-template-columns:1fr 1fr;gap:3rem}.contact-info{display:flex;flex-direction:column;gap:1.5rem}.contact-item{display:flex;align-items:flex-start;gap:1rem}.contact-icon{width:40px;height:40px;background:var(--primary-color);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}.contact-details h3{font-size:1.1rem;margin-bottom:.3rem}.contact-details p{color:var(--text-light)}.contact-form{background:white;padding:2rem;border-radius:10px;box-shadow:var(--shadow)}.form-group{margin-bottom:1.5rem}.form-group label{display:block;margin-bottom:.5rem;font-weight:600}.form-group input,.form-group textarea{width:100%;padding:12px;border:1px solid #ddd;border-radius:5px;font-family:inherit;transition:var(--transition)}.form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--primary-color)}.form-group textarea{resize:vertical;min-height:120px}.submit-btn{background:var(--primary-color);color:white;border:none;padding:12px 30px;border-radius:5px;font-weight:600;cursor:pointer;transition:var(--transition);width:100%}.submit-btn:hover{background:var(--secondary-color)}footer{background:#2c3e50;color:white;padding:50px 0 20px}.footer-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;margin-bottom:2rem}.footer-section h3{margin-bottom:1rem;color:white}.footer-section p{color:#bdc3c7;margin-bottom:1rem}.footer-links{list-style:none}.footer-links li{margin-bottom:.5rem}.footer-links a{color:#bdc3c7;transition:var(--transition)}.footer-links a:hover{color:white;padding-left:5px}.social-links{display:flex;gap:1rem;margin-top:1rem}.social-link{width:40px;height:40px;background:rgba(255,255,255,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;transition:var(--transition)}.social-link:hover{background:var(--primary-color);transform:translateY(-3px)}.footer-bottom{text-align:center;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);color:#bdc3c7}.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);z-index:2000;align-items:center;justify-content:center}.modal.active{display:flex}.modal-content{background:white;border-radius:10px;max-width:800px;width:90%;max-height:90vh;overflow-y:auto;position:relative}.modal-close{position:absolute;top:15px;right:15px;width:30px;height:30px;background:var(--primary-color);color:white;border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:1}.modal-body{padding:2rem}@media (min-width:768px){.mobile-menu-toggle{display:none}.main-navigation{position:static;width:fit-content;height:auto;background:none;padding:0;transform:translateX(4px);box-shadow:none}.nav-menu{display:flex;align-items:center}.nav-menu li{border:none}.nav-menu a{padding:.5rem 1rem}}.content{max-width:800px;margin:3rem auto;padding:0 2rem;line-height:1.6}@media (max-width:992px){.about-content,.concept-content,.contact-content{grid-template-columns:1fr}.hero-content h2{font-size:2.5rem}}@media (max-width:768px){nav ul{flex-direction:column;gap:1rem}.header-content{flex-direction:column;gap:1rem}.hero{height:400px}.hero-content h2{font-size:2rem}.section-title h2{font-size:2rem}.tabs{flex-wrap:wrap}.gallery-tabs{flex-wrap:wrap}.mobile-menu-toggle{display:block}}
+        </style>
+    </noscript>
+
+    <!-- Optimized JavaScript with defer attribute -->
+    <script defer>
+        // Mobile menu functionality
+        (function() {
             const toggleButton = document.querySelector('.mobile-menu-toggle');
             const mainNav = document.querySelector('.main-navigation');
             const navLinks = document.querySelectorAll('.nav-menu a');
             const body = document.body;
 
-            // Function to toggle the menu
             function toggleMenu() {
                 const isOpen = mainNav.classList.toggle('is-open');
                 toggleButton.classList.toggle('is-open');
-                
-                // Update ARIA attribute for accessibility
                 toggleButton.setAttribute('aria-expanded', isOpen);
-
-                // Prevent body scroll when menu is open
-                if (isOpen) {
-                    body.style.overflow = 'hidden';
-                } else {
-                    body.style.overflow = '';
-                }
+                body.style.overflow = isOpen ? 'hidden' : '';
             }
 
-            // Add click event to the toggle button
-            toggleButton.addEventListener('click', toggleMenu);
+            if (toggleButton) {
+                toggleButton.addEventListener('click', toggleMenu);
+            }
 
-            // Add click event to all nav links to close the menu
             navLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     if (mainNav.classList.contains('is-open')) {
@@ -1736,249 +528,253 @@
                 });
             });
 
-            // Close menu if window is resized to desktop view
             window.addEventListener('resize', () => {
                 if (window.innerWidth > 767 && mainNav.classList.contains('is-open')) {
                     toggleMenu();
                 }
             });
-        });
+        })();
 
         // Daily Quotes
-        const quotes = [
-            { text: "The soul who has realized God becomes like a lotus flower in a muddy pond – untouched by the impurity around it.", author: "Brahma Baba" },
-            { text: "When you change, the whole world changes. The key to world peace is within each individual.", author: "Dadi Janki" },
-            { text: "Meditation is not just a practice, it's a way of life. It's the journey from the head to the heart.", author: "Dadi Gulzar" },
-            { text: "The power of silence is greater than the power of words. In silence, we connect with the Supreme.", author: "Brahma Kumaris" },
-            { text: "Your thoughts create your reality. Think positive, speak positive, and act positive.", author: "Sister Shivani" },
-            { text: "The greatest service you can do to humanity is to awaken your own consciousness.", author: "Brahma Baba" },
-            { text: "True spirituality is not about renouncing the world, but about bringing divine qualities into your worldly life.", author: "Dadi Prakashmani" },
-            { text: "When you remember God, you remember your true self – a being of peace, love, and joy.", author: "Brahma Kumaris" },
-            { text: "The present moment is the only reality. Live it with awareness and gratitude.", author: "Sister Jayanti" },
-            { text: "Your character is your destiny. Cultivate virtues and watch your life transform.", author: "Brahma Baba" }
-        ];
+        (function() {
+            const quotes = [
+                { text: "The soul who has realized God becomes like a lotus flower in a muddy pond – untouched by the impurity around it.", author: "Brahma Baba" },
+                { text: "When you change, the whole world changes. The key to world peace is within each individual.", author: "Dadi Janki" },
+                { text: "Meditation is not just a practice, it's a way of life. It's the journey from the head to the heart.", author: "Dadi Gulzar" },
+                { text: "The power of silence is greater than the power of words. In silence, we connect with the Supreme.", author: "Brahma Kumaris" },
+                { text: "Your thoughts create your reality. Think positive, speak positive, and act positive.", author: "Sister Shivani" },
+                { text: "The greatest service you can do to humanity is to awaken your own consciousness.", author: "Brahma Baba" },
+                { text: "True spirituality is not about renouncing the world, but about bringing divine qualities into your worldly life.", author: "Dadi Prakashmani" },
+                { text: "When you remember God, you remember your true self – a being of peace, love, and joy.", author: "Brahma Kumaris" },
+                { text: "The present moment is the only reality. Live it with awareness and gratitude.", author: "Sister Jayanti" },
+                { text: "Your character is your destiny. Cultivate virtues and watch your life transform.", author: "Brahma Baba" }
+            ];
 
-        let currentQuoteIndex = 0;
+            let currentQuoteIndex = 0;
+            const quoteText = document.getElementById('dailyQuote');
+            const quoteAuthor = document.getElementById('quoteAuthor');
+            const refreshBtn = document.getElementById('refreshQuote');
 
-        function displayQuote() {
-            const quote = quotes[currentQuoteIndex];
-            document.getElementById('dailyQuote').textContent = `"${quote.text}"`;
-            document.getElementById('quoteAuthor').textContent = `- ${quote.author}`;
-        }
+            function displayQuote() {
+                const quote = quotes[currentQuoteIndex];
+                if (quoteText) quoteText.textContent = `"${quote.text}"`;
+                if (quoteAuthor) quoteAuthor.textContent = `- ${quote.author}`;
+            }
 
-        document.getElementById('refreshQuote').addEventListener('click', function() {
-            currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
-            displayQuote();
-        });
+            if (refreshBtn) {
+                refreshBtn.addEventListener('click', function() {
+                    currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+                    displayQuote();
+                });
+            }
 
-        // Auto-refresh quote daily
-        function refreshQuoteDaily() {
-            currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
-            displayQuote();
-        }
+            // Auto-refresh quote daily
+            setInterval(() => {
+                currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
+                displayQuote();
+            }, 86400000); // 24 hours
+        })();
 
-        // Set up daily refresh (86400000 ms = 24 hours)
-        setInterval(refreshQuoteDaily, 86400000);
+        // Tab functionality for Events and Gallery
+        (function() {
+            // Events tabs
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
 
-        // Tab functionality for Events
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        const tabContents = document.querySelectorAll('.tab-content');
-
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const tabId = btn.getAttribute('data-tab');
-                
-                // Remove active class from all buttons and contents
-                tabBtns.forEach(b => b.classList.remove('active'));
-                tabContents.forEach(c => c.classList.remove('active'));
-                
-                // Add active class to clicked button and corresponding content
-                btn.classList.add('active');
-                document.getElementById(tabId).classList.add('active');
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tabId = btn.getAttribute('data-tab');
+                    
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    btn.classList.add('active');
+                    const targetContent = document.getElementById(tabId);
+                    if (targetContent) targetContent.classList.add('active');
+                });
             });
-        });
 
-        // Tab functionality for Gallery
-        const galleryTabBtns = document.querySelectorAll('.gallery-tab-btn');
-        const galleryContents = document.querySelectorAll('.gallery-content');
+            // Gallery tabs
+            const galleryTabBtns = document.querySelectorAll('.gallery-tab-btn');
+            const galleryContents = document.querySelectorAll('.gallery-content');
 
-        galleryTabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const galleryId = btn.getAttribute('data-gallery');
-                
-                // Remove active class from all buttons and contents
-                galleryTabBtns.forEach(b => b.classList.remove('active'));
-                galleryContents.forEach(c => c.classList.remove('active'));
-                
-                // Add active class to clicked button and corresponding content
-                btn.classList.add('active');
-                document.getElementById(galleryId).classList.add('active');
+            galleryTabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const galleryId = btn.getAttribute('data-gallery');
+                    
+                    galleryTabBtns.forEach(b => b.classList.remove('active'));
+                    galleryContents.forEach(c => c.classList.remove('active'));
+                    
+                    btn.classList.add('active');
+                    const targetContent = document.getElementById(galleryId);
+                    if (targetContent) targetContent.classList.add('active');
+                });
             });
-        });
+        })();
 
         // Gallery Modal
-        const modal = document.getElementById('imageModal');
-        const modalClose = document.getElementById('modalClose');
-        const modalImage = document.getElementById('modalImage');
-        const galleryItems = document.querySelectorAll('.gallery-item');
+        (function() {
+            const modal = document.getElementById('imageModal');
+            const modalClose = document.getElementById('modalClose');
+            const modalImage = document.getElementById('modalImage');
+            const galleryItems = document.querySelectorAll('.gallery-item');
 
-        galleryItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const imgSrc = item.querySelector('img').getAttribute('src');
-                modalImage.setAttribute('src', imgSrc);
-                modal.classList.add('active');
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const img = item.querySelector('img');
+                    if (img && modalImage) {
+                        modalImage.setAttribute('src', img.getAttribute('src'));
+                        modalImage.setAttribute('alt', img.getAttribute('alt'));
+                        modal.classList.add('active');
+                    }
+                });
             });
-        });
 
-        modalClose.addEventListener('click', () => {
-            modal.classList.remove('active');
-        });
-
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('active');
+            if (modalClose) {
+                modalClose.addEventListener('click', () => {
+                    modal.classList.remove('active');
+                });
             }
-        });
 
-        // Contact Form
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const message = document.getElementById('message').value;
-            
-            // Here you would normally send the data to a server
-            // For this example, we'll just show a success message
-            alert(`Thank you, ${name}! Your message has been received. We will get back to you soon.`);
-            
-            // Reset form
-            this.reset();
-        });
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
+        })();
 
-        // Newsletter Form
-        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get email value
-            const email = this.querySelector('input[type="email"]').value;
-            
-            // Here you would normally send the data to a server
-            // For this example, we'll just show a success message
-            alert(`Thank you for subscribing with email: ${email}. You will now receive our daily spiritual thoughts and event updates.`);
-            
-            // Reset form
-            this.reset();
-        });
+        // Form submissions
+        (function() {
+            // Contact form
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('name').value;
+                    alert(`Thank you, ${name}! Your message has been received. We will get back to you soon.`);
+                    this.reset();
+                });
+            }
+
+            // Newsletter form
+            const newsletterForm = document.getElementById('newsletterForm');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const email = this.querySelector('input[type="email"]').value;
+                    alert(`Thank you for subscribing with email: ${email}. You will now receive our daily spiritual thoughts and event updates.`);
+                    this.reset();
+                });
+            }
+        })();
 
         // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
+        (function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
             });
-        });
+        })();
 
-        // Add animation on scroll
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.event-card, .gallery-item, .contact-item');
-            
-            elements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
+        // Animation on scroll
+        (function() {
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.event-card, .gallery-item, .contact-item');
                 
-                if (elementTop < window.innerHeight - elementVisible) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }
+                elements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+
+            // Set initial state for animation
+            document.querySelectorAll('.event-card, .gallery-item, .contact-item').forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             });
-        };
 
-        // Set initial state for animation
-        document.querySelectorAll('.event-card, .gallery-item, .contact-item').forEach(element => {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(20px)';
-            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        });
+            // Run animation on scroll
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Run once on page load
+        })();
 
-        // Run animation on scroll
-        window.addEventListener('scroll', animateOnScroll);
-        animateOnScroll(); // Run once on page load
-
-        
-// Preloader functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const preloader = document.getElementById('preloader');
-    const progressBar = document.querySelector('.progress-bar');
-    const percentText = document.querySelector('.loading-percent');
-    
-    // Simulate loading progress
-    let progress = 0;
-    const interval = setInterval(function() {
-        if (progress < 90) {
-            progress += Math.random() * 15;
-            if (progress > 90) progress = 90;
+        // Preloader functionality
+        (function() {
+            const preloader = document.getElementById('preloader');
+            const progressBar = document.querySelector('.progress-bar');
+            const percentText = document.querySelector('.loading-percent');
             
-            if (progressBar) {
-                progressBar.style.width = progress + '%';
+            if (!preloader) return;
+            
+            let progress = 0;
+            const interval = setInterval(function() {
+                if (progress < 90) {
+                    progress += Math.random() * 15;
+                    if (progress > 90) progress = 90;
+                    
+                    if (progressBar) {
+                        progressBar.style.width = progress + '%';
+                    }
+                    
+                    if (percentText) {
+                        percentText.textContent = Math.floor(progress) + '%';
+                    }
+                } else {
+                    clearInterval(interval);
+                }
+            }, 300);
+            
+            function hidePreloader() {
+                if (progressBar) {
+                    progressBar.style.width = '100%';
+                }
+                
+                if (percentText) {
+                    percentText.textContent = '100%';
+                }
+                
+                setTimeout(function() {
+                    preloader.classList.add('fade-out');
+                    
+                    setTimeout(function() {
+                        preloader.style.display = 'none';
+                    }, 500);
+                }, 500);
             }
             
-            if (percentText) {
-                percentText.textContent = Math.floor(progress) + '%';
-            }
-        } else {
-            clearInterval(interval);
-        }
-    }, 300);
-    
-    // Function to hide preloader
-    function hidePreloader() {
-        // Complete the progress bar
-        if (progressBar) {
-            progressBar.style.width = '100%';
-        }
-        
-        if (percentText) {
-            percentText.textContent = '100%';
-        }
-        
-        // Wait a moment then fade out
-        setTimeout(function() {
-            preloader.classList.add('fade-out');
+            window.addEventListener('load', function() {
+                clearInterval(interval);
+                hidePreloader();
+            });
             
-            // Remove from DOM after animation completes
+            // Fallback: hide preloader after maximum 5 seconds
             setTimeout(function() {
-                preloader.style.display = 'none';
-            }, 500);
-        }, 500);
-    }
-    
-    // Hide preloader when page is fully loaded
-    window.addEventListener('load', function() {
-        clearInterval(interval);
-        hidePreloader();
-    });
-    
-    // Fallback: hide preloader after maximum 5 seconds
-    setTimeout(function() {
-        if (preloader.style.display !== 'none') {
-            clearInterval(interval);
-            hidePreloader();
-        }
-    }, 5000);
-});
+                if (preloader.style.display !== 'none') {
+                    clearInterval(interval);
+                    hidePreloader();
+                }
+            }, 5000);
+        })();
     </script>
 </body>
 </html>

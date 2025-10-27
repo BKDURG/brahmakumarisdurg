@@ -15,6 +15,8 @@
             --text-light: #7f8c8d;
             --bg-light: #f8f9fa;
             --bg-white: #ffffff;
+            --bg-color: #ffffff;
+            --text-color: #2c3e50;
             --shadow: 0 5px 15px rgba(19, 18, 18, 0.308);
             --transition: all 0.3s linear;
         }
@@ -294,13 +296,13 @@
 
         nav a:hover::after {
             width: 100%;
-            background: var(#ebc251);
+            background: #ebc251;
             transform: translateY(-2px);
         }
         
         /* --- Mobile Menu Toggle (Hamburger) --- */
         .mobile-menu-toggle {
-            display: block; /* Visible on mobile */
+            display: none; /* Hidden by default, visible on mobile */
             background: none;
             border: none;
             cursor: pointer;
@@ -333,17 +335,17 @@
 
         .hamburger::after {
             transform: translateY(8px);
-            transition-duration: 0.8sec ease-in-out;
+            transition-duration: 0.8s ease-in-out;
         }
 
         /* Style for the 'X' when menu is open */
         .mobile-menu-toggle.is-open .hamburger {
-            background: #777777;
-            transition: all 0.8sec linear;
+            background: transparent;
+            transition: all 0.4s linear;
         }
         .mobile-menu-toggle.is-open .hamburger::before {
             transform: rotate(45deg);
-            transition: all 0.8sec linear;
+            transition: all 0.8s linear;
         }
         .mobile-menu-toggle.is-open .hamburger::after {
             transform: rotate(-45deg);
@@ -362,7 +364,7 @@
             border-radius: 24px;
             padding-top: 5rem;
             transform: translateX(100%);
-            transition: 0.3sec ease-in-out;
+            transition: 0.3s ease-in-out;
             box-shadow: -2px 0 5px rgba(0,0,0,0.1);
         }
 
@@ -1196,6 +1198,11 @@
             .gallery-tabs {
                 flex-wrap: wrap;
             }
+            
+            /* Show mobile menu toggle on mobile */
+            .mobile-menu-toggle {
+                display: block;
+            }
         }
 
         @media (max-width: 576px) {
@@ -1711,9 +1718,9 @@
 
                 // Prevent body scroll when menu is open
                 if (isOpen) {
-                    body.style.overflow = '';
+                    body.style.overflow = 'hidden';
                 } else {
-                    body.style.overflow = 'close';
+                    body.style.overflow = '';
                 }
             }
 
@@ -1912,84 +1919,6 @@
 
         
 // Preloader functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const preloader = document.getElementById('preloader');
-    const progressBar = document.querySelector('.progress-bar');
-    
-    // Simulate loading progress
-    let progress = 0;
-    const interval = setInterval(function() {
-        if (progress < 90) {
-            progress += Math.random() * 15;
-            if (progress > 90) progress = 90;
-            
-            if (progressBar) {
-                progressBar.style.width = progress + '%';
-            }
-        } else {
-            clearInterval(interval);
-        }
-    }, 300);
-    
-    // Function to hide preloader
-    function hidePreloader() {
-        // Complete the progress bar
-        if (progressBar) {
-            progressBar.style.width = '100%';
-        }
-        
-        // Wait a moment then fade out
-        setTimeout(function() {
-            preloader.classList.add('fade-out');
-            
-            // Remove from DOM after animation completes
-            setTimeout(function() {
-                preloader.style.display = 'none';
-            }, 500);
-        }, 500);
-    }
-    
-    // Hide preloader when page is fully loaded
-    window.addEventListener('load', function() {
-        clearInterval(interval);
-        hidePreloader();
-    });
-    
-    // Fallback: hide preloader after maximum 5 seconds
-    setTimeout(function() {
-        if (preloader.style.display !== 'none') {
-            clearInterval(interval);
-            hidePreloader();
-        }
-    }, 5000);
-});
-
-// Alternative preloader with lotus animation
-function createLotusLoader() {
-    const container = document.createElement('div');
-    container.className = 'loader-container';
-    
-    const lotus = document.createElement('div');
-    lotus.className = 'lotus-loader';
-    
-    // Create 8 petals
-    for (let i = 0; i < 8; i++) {
-        const petal = document.createElement('div');
-        petal.className = 'lotus-petal';
-        petal.style.transform = `rotate(${i * 45}deg) translateY(-30px)`;
-        petal.style.animation = `pulse 2s ${i * 0.2}s infinite ease-in-out`;
-        lotus.appendChild(petal);
-    }
-    
-    container.appendChild(lotus);
-    return container;
-}
-
-// If you want to use the lotus loader instead, replace the loader div in the preloader with:
-// document.querySelector('.preloader-loader').innerHTML = '';
-// document.querySelector('.preloader-loader').appendChild(createLotusLoader());
-
-// Enhanced preloader with percentage
 document.addEventListener('DOMContentLoaded', function() {
     const preloader = document.getElementById('preloader');
     const progressBar = document.querySelector('.progress-bar');

@@ -4,6 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brahmakumaris - Durg, Chhattisgarh | Spiritual Awakening</title>
+    
+    <!-- Favicon Implementation -->
+    <link rel="icon" type="image/x-icon" href="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/Shiv%20baba.webp?raw=true">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/Shiv%20baba.webp?raw=true">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/Shiv%20baba.webp?raw=true">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/Shiv%20baba.webp?raw=true">
+    <link rel="icon" type="image/svg+xml" href="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/Shiv%20baba.webp?raw=true">
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/Shiv%20baba.webp?raw=true">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/Shiv%20baba.webp?raw=true">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/Shiv%20baba.webp?raw=true">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/Shiv%20baba.webp?raw=true">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/Shiv%20baba.webp?raw=true">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/Shiv%20baba.webp?raw=true">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/Shiv%20baba.webp?raw=true">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/Shiv%20baba.webp?raw=true">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/Shiv%20baba.webp?raw=true">
+    
+    <!-- Android and Windows Icons -->
+    <link rel="shortcut icon" sizes="196x196" href="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/Shiv%20baba.webp?raw=true">
+    <link rel="shortcut icon" sizes="192x192" href="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/Shiv%20baba.webp?raw=true">
+    
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileColor" content="#473775">
+    <meta name="msapplication-TileImage" content="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/Shiv%20baba.webp?raw=true">
+    <meta name="msapplication-config" content="https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/Shiv%20baba.webp?raw=true">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="https://github.com/BKDURG/brahmakumarisdurg/blob/main/manifest.json?raw=true">
+    
+    <!-- Theme Color for Mobile Browsers -->
+    <meta name="theme-color" content="#473775">
+    <meta name="msapplication-navbutton-color" content="#473775">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#473775">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
@@ -800,170 +836,6 @@
                 }
             }, 5000);
         })();
-        
-// Telegram Gallery using GitHub Actions
-class TelegramGallery {
-    constructor() {
-        this.photos = [];
-        this.loadedPhotos = [];
-        this.photosPerLoad = 8;
-    }
-    
-    async init() {
-        try {
-            await this.loadPhotos();
-            this.renderGallery();
-            this.setupEventListeners();
-        } catch (error) {
-            console.error('Error initializing gallery:', error);
-            this.showError();
-        }
-    }
-    
-    async loadPhotos() {
-        try {
-            const response = await fetch('data/photos.json');
-            if (!response.ok) {
-                throw new Error(`Failed to load photos: ${response.statusText}`);
-            }
-            
-            this.photos = await response.json();
-            console.log(`Loaded ${this.photos.length} photos`);
-            
-            if (this.photos.length === 0) {
-                throw new Error('No photos found. The GitHub Action might not have run yet.');
-            }
-            
-            // Load initial set of photos
-            this.loadedPhotos = this.photos.slice(0, this.photosPerLoad);
-        } catch (error) {
-            console.error('Error loading photos:', error);
-            throw error;
-        }
-    }
-    
-    renderGallery() {
-        const galleryContainer = document.getElementById('telegramGallery');
-        const loadingIndicator = document.getElementById('galleryLoading');
-        
-        if (loadingIndicator) {
-            loadingIndicator.style.display = 'none';
-        }
-        
-        if (this.loadedPhotos.length === 0) {
-            galleryContainer.innerHTML = '<div class="gallery-error">No photos found in the channel. Please add some photos to your Telegram channel.</div>';
-            return;
-        }
-        
-        // Clear existing content
-        galleryContainer.innerHTML = '';
-        
-        // Render loaded photos
-        this.loadedPhotos.forEach((photo, index) => {
-            const galleryItem = document.createElement('div');
-            galleryItem.className = 'telegram-gallery-item';
-            galleryItem.innerHTML = `
-                <img src="${photo.url}" alt="${photo.caption || 'Gallery Image ' + (index + 1)}" loading="lazy">
-                <div class="telegram-gallery-overlay">
-                    <i class="fas fa-search-plus gallery-icon"></i>
-                </div>
-            `;
-            
-            galleryItem.addEventListener('click', () => this.openModal(photo));
-            galleryContainer.appendChild(galleryItem);
-        });
-        
-        // Show/hide load more button
-        const loadMoreContainer = document.getElementById('loadMoreContainer');
-        if (this.loadedPhotos.length < this.photos.length) {
-            loadMoreContainer.style.display = 'block';
-        } else {
-            loadMoreContainer.style.display = 'none';
-        }
-    }
-    
-    loadMore() {
-        const currentLength = this.loadedPhotos.length;
-        const newPhotos = this.photos.slice(currentLength, currentLength + this.photosPerLoad);
-        
-        this.loadedPhotos = [...this.loadedPhotos, ...newPhotos];
-        this.renderGallery();
-    }
-    
-    openModal(photo) {
-        const modal = document.getElementById('imageModal');
-        const modalImage = document.getElementById('modalImage');
-        const modalCaption = document.getElementById('modalCaption');
-        
-        modalImage.src = photo.url;
-        modalCaption.textContent = photo.caption;
-        modal.classList.add('active');
-    }
-    
-    setupEventListeners() {
-        // Load more button
-        const loadMoreBtn = document.getElementById('loadMoreBtn');
-        if (loadMoreBtn) {
-            loadMoreBtn.addEventListener('click', () => this.loadMore());
-        }
-        
-        // Modal close
-        const modalClose = document.getElementById('modalClose');
-        const modal = document.getElementById('imageModal');
-        
-        modalClose.addEventListener('click', () => {
-            modal.classList.remove('active');
-        });
-        
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('active');
-            }
-        });
-    }
-    
-    showError() {
-        const galleryContainer = document.getElementById('telegramGallery');
-        const loadingIndicator = document.getElementById('galleryLoading');
-        
-        if (loadingIndicator) {
-            loadingIndicator.style.display = 'none';
-        }
-        
-        galleryContainer.innerHTML = `
-            <div class="gallery-error">
-                <h3>Unable to load gallery</h3>
-                <p>The GitHub Action might not have run yet. Please try again later.</p>
-                <button class="btn" onclick="location.reload()">Refresh Page</button>
-            </div>
-        `;
-    }
-}
-
-// Initialize Telegram Gallery when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM loaded, initializing Telegram Gallery...');
-    
-    // Initialize Telegram Gallery
-    const telegramGallery = new TelegramGallery();
-    telegramGallery.init();
-    
-    // Keep your existing gallery tab functionality
-    const galleryTabBtns = document.querySelectorAll('.gallery-tab-btn');
-    const galleryContents = document.querySelectorAll('.gallery-content');
-    
-    galleryTabBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const galleryId = btn.getAttribute('data-gallery');
-            
-            galleryTabBtns.forEach(b => b.classList.remove('active'));
-            galleryContents.forEach(c => c.classList.remove('active'));
-            
-            btn.classList.add('active');
-            document.getElementById(galleryId).classList.add('active');
-        });
-    });
-});
     </script>
 </body>
 </html>

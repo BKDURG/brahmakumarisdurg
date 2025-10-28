@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const fetch = require('node-fetch');
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 // Configuration
 const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;

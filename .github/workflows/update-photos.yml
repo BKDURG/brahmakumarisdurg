@@ -18,26 +18,25 @@ jobs:
       with:
         node-version: '18'
         
-    - name: Install dependencies
-      run: npm install node-fetch@2.6.7
+    - name: Create data directory
+      run: mkdir -p data
       
-    - name: Debug environment
+    - name: Test Telegram API connection
       run: |
-        echo "Bot token starts with: ${TELEGRAM_BOT_TOKEN:0:10}..."
-        echo "Channel ID: $TELEGRAM_CHANNEL_ID"
+        curl -s "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/getMe" | jq .
         
     - name: Fetch photos from Telegram
-      run: node .github/scripts/fetch-photos.js
+      run: node .github/scripts/telegram-fetch.js
       env:
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
       
-    - name: Check if photos were found
+    - name: Verify photos file
       run: |
         if [ -f "data/photos.json" ]; then
           echo "Photos file exists"
           echo "File size: $(wc -c < data/photos.json) bytes"
-          echo "Photo count: $(jq length data/photos.json)"
+          echo "Photo count: $(jq length data/photos.json || echo 0)"
         else
           echo "Photos file not found"
           exit 1
@@ -48,5 +47,9 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add data/photos.json
-        git diff --staged --quiet || git commit -m "Update photos from Telegram"
-        git push
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Update photos from Telegram ($(date))"
+          git push
+        fi

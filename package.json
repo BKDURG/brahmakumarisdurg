@@ -4,9 +4,9 @@
   "description": "Brahmakumaris Durg Website",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node .github/scripts/test-telegram.js",
+    "fetch-photos": "node .github/scripts/telegram-fetch.js"
   },
-  "dependencies": {
-    "node-fetch": "^3.3.2"
-  }
+  "dependencies": {},
+  "devDependencies": {}
 }

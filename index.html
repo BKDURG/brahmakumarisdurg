@@ -12,7 +12,32 @@
     
     <!-- Critical CSS Inlined -->
     <style>
-        :root{--primary-color:#473775;--secondary-color:#186ea8;--accent-color:#e74c3c;--text-dark:#2c3e50;--text-light:#7f8c8d;--bg-light:#f8f9fa;--bg-white:#ffffff;--bg-color:#ffffff;--text-color:#2c3e50;--shadow:0 5px 15px rgba(19,18,18,.308);--transition:all .3s linear}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Montserrat',sans-serif;color:var(--text-dark);margin:0;background-color:var(--bg-color);color:var(--text-color);line-height:1.6;overflow-x:hidden}h1,h2,h3,h4,h5,h6{font-family:'Playfair Display',serif;margin-bottom:1rem}a{text-decoration:none;color:#eedc3f;transition:var(--transition)}a:hover{color:#f7c467}img{max-width:100%;height:auto}.container{width:100%;max-width:1200px;margin:0 auto;padding:0 15px}.preloader{position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(142,68,173,.95),rgba(52,152,219,.95));backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:flex;justify-content:center;align-items:center;z-index:9999;transition:opacity .5s ease,visibility .5s ease}.preloader.fade-out{opacity:0;visibility:hidden}.preloader-content{text-align:center;color:white;max-width:500px;padding:2rem}.preloader-logo{margin-bottom:1.5rem}.preloader-logo img{width:100px;height:100px;border-radius:50%;border:3px solid rgba(255,255,255,.3);box-shadow:0 5px 15px rgba(0,0,0,.2);animation:pulse 2s infinite ease-in-out}.preloader-text h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:.5rem;font-weight:700}.preloader-text p{font-size:1.1rem;margin-bottom:2rem;opacity:.9}.preloader-loader{margin-bottom:2rem}.loader{width:60px;height:60px;border:3px solid rgba(255,255,255,.3);border-top:3px solid white;border-radius:50%;margin:0 auto 1rem;animation:spin 1s linear infinite}.loader-text{font-size:.9rem;opacity:.8}.preloader-quote{font-style:italic;font-size:.9rem;opacity:.8;max-width:400px;margin:0 auto;line-height:1.5}@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}.preloader-progress{width:100%;height:4px;background:rgba(255,255,255,.2);border-radius:2px;margin:1.5rem 0;overflow:hidden}.progress-bar{height:100%;background:white;border-radius:2px;width:0%;transition:width .3s ease}@media (max-width:768px){.preloader-text h2{font-size:1.8rem}.preloader-text p{font-size:1rem}.preloader-quote{font-size:.8rem}}header{background:linear-gradient(90deg,var(--primary-color),var(--secondary-color),var(--secondary-color));color:white;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(10px);padding:1rem 2rem;position:sticky;width:100%;top:0;z-index:1000;box-shadow:var(--shadow)}.header-wrapper{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}.header-content{display:flex;justify-content:space-between;align-items:center}.logo{display:flex;align-items:center;gap:10px}.logo img{width:50px;height:50px;border-radius:50%}.logo h1{font-size:1.5rem;margin-bottom:0}nav ul{display:flex;list-style:none;gap:2rem}nav a{color:#fff;font-weight:500;position:relative;transform:translateY(-2px)}nav a::after{content:'';position:absolute;bottom:-5px;left:0;width:0;height:2px;background-color:rgb(243,82,82);transition:var(--transition)}nav a:hover::after{width:100%;background:#ebc251;transform:translateY(-2px)}.mobile-menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:.5rem;z-index:1001}.hamburger{display:block;position:relative;width:25px;height:3px;background:#fff;transition:var(--transition)}.hamburger::before,.hamburger::after{content:'';position:absolute;width:25px;height:3px;background:#fff;transition:var(--transition)}.hamburger::before{transform:translateY(-8px)}.hamburger::after{transform:translateY(8px);transition-duration:.8s ease-in-out}.mobile-menu-toggle.is-open .hamburger{background:transparent;transition:all .4s linear}.mobile-menu-toggle.is-open .hamburger::before{transform:rotate(45deg);transition:all .8s linear}.mobile-menu-toggle.is-open .hamburger::after{transform:rotate(-45deg)}.main-navigation{position:fixed;top:0;right:0;width:280px;height:100vh;background-color:#2c3b6ef6;color:#2c3e50;border-radius:24px;padding-top:5rem;transform:translateX(100%);transition:.3s ease-in-out;box-shadow:-2px 0 5px rgba(0,0,0,.1)}.main-navigation.is-open{transform:translateX(-5px)}.main-navigation.is-open:hover{background-color:#2c3b6ef6;border-radius:15px}.nav-menu{list-style:none;color:#473775;margin:0;padding:0}.nav-menu li{border-bottom:1.5px solid #dfb288;color:#2c3e50}.nav-menu a{display:block;padding:1rem 2rem;text-decoration:none;color:#fffffff6;font-weight:500;transition:background-color var(--transition)}.nav-menu a:hover{background-color:#7c4d20;border-radius:14px;color:#fff}.daily-quote{background:linear-gradient(135deg,#f3f3f3,#a3bce4);padding:80px 0 40px;text-align:center;margin-top:70px}.quote-container{max-width:800px;margin:0 auto;padding:2rem;background:rgba(255,255,255,.918);border-radius:48px;box-shadow:var(--shadow);position:relative;overflow:hidden}.quote-container::before{content:'"';position:absolute;top:-20px;left:10px;font-size:8rem;color:rgba(142,68,173,.1);font-family:'Playfair Display',serif}.quote-text{font-size:1.3rem;font-style:italic;margin-bottom:1rem;position:relative;z-index:1}.quote-author{font-weight:600;color:var(--primary-color)}.refresh-quote{background:var(--primary-color);color:white;border:none;padding:8px 15px;border-radius:5px;cursor:pointer;margin-top:1rem;transition:var(--transition)}.refresh-quote:hover{background:var(--secondary-color);transform:translateY(-2px)}.hero{background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url('https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/anand%20sarovar.webp?raw=true');background-size:cover;background-position:center;backdrop-filter:var(--shadow);height:500px;display:flex;align-items:center;justify-content:center;text-align:center;color:white}.hero-content h2{font-size:3rem;margin-bottom:1rem;animation:fadeInUp 1s ease}.hero-content p{font-size:1.2rem;max-width:700px;margin:0 auto 2rem;animation:fadeInUp 1s ease .2s both}.btn{display:inline-block;background:var(--primary-color);color:white;padding:12px 30px;border-radius:5px;font-weight:600;transition:var(--transition);animation:fadeInUp 1s ease .4s both}.btn:hover{background:var(--secondary-color);transform:translateY(-3px)}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}@media (max-width:768px){.mobile-menu-toggle{display:block}}@media (max-width:576px){.logo h1{font-size:1.2rem}.hero-content h2{font-size:1.8rem}.hero-content p{font-size:1rem}.quote-text{font-size:1.1rem}}
+        :root{--primary-color:#473775;
+        --secondary-color:#186ea8;
+        --accent-color:#e74c3c;
+        --text-dark:#2c3e50;
+        --text-light:#7f8c8d;
+        --bg-light:#f8f9fa;
+        --bg-white:#ffffff;
+        --bg-color:#ffffff;
+        --text-color:#2c3e50;
+        --shadow:0 5px 15px rgba(19,18,18,.308);
+        --transition:all .3s linear}*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Montserrat',sans-serif;color:var(--text-dark);margin:0;
+        background-color:var(--bg-color);
+        color:var(--text-color);
+        line-height:1.6;overflow-x:hidden}h1,h2,h3,h4,h5,h6{font-family:'Playfair Display',serif;margin-bottom:1rem}a{text-decoration:none;color:#eedc3f;
+            transition:var(--transition)}a:hover{color:#f7c467}img{max-width:100%;height:auto}.container{width:100%;max-width:1200px;
+                margin:0 auto;
+            padding:0 15px}.preloader{position:fixed;top:0;left:0;width:100%;
+                height:100%;
+                background:linear-gradient(135deg,rgba(142,68,173,.95),rgba(52,152,219,.95));backdrop-filter:blur(10px);
+            -webkit-backdrop-filter:blur(10px);
+            display:flex;justify-content:center;
+            align-items:center;z-index:9999;
+            transition:opacity .5s ease,visibility .5s ease}.preloader.fade-out{opacity:0;visibility:hidden}.preloader-content{text-align:center;color:white;
+                max-width:500px;padding:2rem}.preloader-logo{margin-bottom:1.5rem}.preloader-logo img{width:100px;height:100px;border-radius:50%;border:3px solid rgba(255,255,255,.3);box-shadow:0 5px 15px rgba(0,0,0,.2);
+                    animation:pulse 2s infinite ease-in-out}.preloader-text h2{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:.5rem;
+                    font-weight:700}.preloader-text p{font-size:1.1rem;margin-bottom:2rem;opacity:.9}.preloader-loader{margin-bottom:2rem}.loader{width:60px;height:60px;border:3px solid rgba(255,255,255,.3);border-top:3px solid white;border-radius:50%;margin:0 auto 1rem;animation:spin 1s linear infinite}.loader-text{font-size:.9rem;opacity:.8}.preloader-quote{font-style:italic;font-size:.9rem;opacity:.8;max-width:400px;margin:0 auto;line-height:1.5}@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}.preloader-progress{width:100%;height:4px;background:rgba(255,255,255,.2);border-radius:2px;margin:1.5rem 0;overflow:hidden}.progress-bar{height:100%;background:white;border-radius:2px;width:0%;transition:width .3s ease}@media (max-width:768px){.preloader-text h2{font-size:1.8rem}.preloader-text p{font-size:1rem}.preloader-quote{font-size:.8rem}}header{background:linear-gradient(90deg,var(--primary-color),var(--secondary-color),var(--secondary-color));color:white;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(10px);padding:1rem 2rem;position:sticky;width:100%;top:0;z-index:1000;box-shadow:var(--shadow)}.header-wrapper{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}.header-content{display:flex;justify-content:space-between;align-items:center}.logo{display:flex;align-items:center;gap:10px}.logo img{width:50px;height:50px;border-radius:50%}.logo h1{font-size:1.5rem;margin-bottom:0}nav ul{display:flex;list-style:none;gap:2rem}nav a{color:#fff;font-weight:500;position:relative;transform:translateY(-2px)}nav a::after{content:'';position:absolute;bottom:-5px;left:0;width:0;height:2px;background-color:rgb(243,82,82);transition:var(--transition)}nav a:hover::after{width:100%;background:#ebc251;transform:translateY(-2px)}.mobile-menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:.5rem;z-index:1001}.hamburger{display:block;position:relative;width:25px;height:3px;background:#fff;transition:var(--transition)}.hamburger::before,.hamburger::after{content:'';position:absolute;width:25px;height:3px;background:#fff;transition:var(--transition)}.hamburger::before{transform:translateY(-8px)}.hamburger::after{transform:translateY(8px);transition-duration:.8s ease-in-out}.mobile-menu-toggle.is-open .hamburger{background:transparent;transition:all .4s linear}.mobile-menu-toggle.is-open .hamburger::before{transform:rotate(45deg);transition:all .8s linear}.mobile-menu-toggle.is-open .hamburger::after{transform:rotate(-45deg)}.main-navigation{position:fixed;top:0;right:0;width:280px;height:100vh;background-color:#2c3b6ef6;color:#2c3e50;border-radius:24px;padding-top:5rem;transform:translateX(100%);transition:.3s ease-in-out;box-shadow:-2px 0 5px rgba(0,0,0,.1)}.main-navigation.is-open{transform:translateX(-5px)}.main-navigation.is-open:hover{background-color:#2c3b6ef6;border-radius:15px}.nav-menu{list-style:none;color:#473775;margin:0;padding:0}.nav-menu li{border-bottom:1.5px solid #dfb288;color:#2c3e50}.nav-menu a{display:block;padding:1rem 2rem;text-decoration:none;color:#fffffff6;font-weight:500;transition:background-color var(--transition)}.nav-menu a:hover{background-color:#7c4d20;border-radius:14px;color:#fff}.daily-quote{background:linear-gradient(135deg,#f3f3f3,#a3bce4);padding:80px 0 40px;text-align:center;margin-top:70px}.quote-container{max-width:800px;margin:0 auto;padding:2rem;background:rgba(255,255,255,.918);border-radius:48px;box-shadow:var(--shadow);position:relative;overflow:hidden}.quote-container::before{content:'"';position:absolute;top:-20px;left:10px;font-size:8rem;color:rgba(142,68,173,.1);font-family:'Playfair Display',serif}.quote-text{font-size:1.3rem;font-style:italic;margin-bottom:1rem;position:relative;z-index:1}.quote-author{font-weight:600;color:var(--primary-color)}.refresh-quote{background:var(--primary-color);color:white;border:none;padding:8px 15px;border-radius:5px;cursor:pointer;margin-top:1rem;transition:var(--transition)}.refresh-quote:hover{background:var(--secondary-color);transform:translateY(-2px)}.hero{background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url('https://github.com/BKDURG/brahmakumarisdurg/blob/main/images/anand%20sarovar.webp?raw=true');background-size:cover;background-position:center;backdrop-filter:var(--shadow);height:500px;display:flex;align-items:center;justify-content:center;text-align:center;color:white}.hero-content h2{font-size:3rem;margin-bottom:1rem;animation:fadeInUp 1s ease}.hero-content p{font-size:1.2rem;max-width:700px;margin:0 auto 2rem;animation:fadeInUp 1s ease .2s both}.btn{display:inline-block;background:var(--primary-color);color:white;padding:12px 30px;border-radius:5px;font-weight:600;transition:var(--transition);animation:fadeInUp 1s ease .4s both}.btn:hover{background:var(--secondary-color);transform:translateY(-3px)}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}@media (max-width:768px){.mobile-menu-toggle{display:block}}@media (max-width:576px){.logo h1{font-size:1.2rem}.hero-content h2{font-size:1.8rem}.hero-content p{font-size:1rem}.quote-text{font-size:1.1rem}}
     </style>
     
     <!-- Non-critical CSS loaded asynchronously -->
@@ -775,6 +800,170 @@
                 }
             }, 5000);
         })();
+        
+// Telegram Gallery using GitHub Actions
+class TelegramGallery {
+    constructor() {
+        this.photos = [];
+        this.loadedPhotos = [];
+        this.photosPerLoad = 8;
+    }
+    
+    async init() {
+        try {
+            await this.loadPhotos();
+            this.renderGallery();
+            this.setupEventListeners();
+        } catch (error) {
+            console.error('Error initializing gallery:', error);
+            this.showError();
+        }
+    }
+    
+    async loadPhotos() {
+        try {
+            const response = await fetch('data/photos.json');
+            if (!response.ok) {
+                throw new Error(`Failed to load photos: ${response.statusText}`);
+            }
+            
+            this.photos = await response.json();
+            console.log(`Loaded ${this.photos.length} photos`);
+            
+            if (this.photos.length === 0) {
+                throw new Error('No photos found. The GitHub Action might not have run yet.');
+            }
+            
+            // Load initial set of photos
+            this.loadedPhotos = this.photos.slice(0, this.photosPerLoad);
+        } catch (error) {
+            console.error('Error loading photos:', error);
+            throw error;
+        }
+    }
+    
+    renderGallery() {
+        const galleryContainer = document.getElementById('telegramGallery');
+        const loadingIndicator = document.getElementById('galleryLoading');
+        
+        if (loadingIndicator) {
+            loadingIndicator.style.display = 'none';
+        }
+        
+        if (this.loadedPhotos.length === 0) {
+            galleryContainer.innerHTML = '<div class="gallery-error">No photos found in the channel. Please add some photos to your Telegram channel.</div>';
+            return;
+        }
+        
+        // Clear existing content
+        galleryContainer.innerHTML = '';
+        
+        // Render loaded photos
+        this.loadedPhotos.forEach((photo, index) => {
+            const galleryItem = document.createElement('div');
+            galleryItem.className = 'telegram-gallery-item';
+            galleryItem.innerHTML = `
+                <img src="${photo.url}" alt="${photo.caption || 'Gallery Image ' + (index + 1)}" loading="lazy">
+                <div class="telegram-gallery-overlay">
+                    <i class="fas fa-search-plus gallery-icon"></i>
+                </div>
+            `;
+            
+            galleryItem.addEventListener('click', () => this.openModal(photo));
+            galleryContainer.appendChild(galleryItem);
+        });
+        
+        // Show/hide load more button
+        const loadMoreContainer = document.getElementById('loadMoreContainer');
+        if (this.loadedPhotos.length < this.photos.length) {
+            loadMoreContainer.style.display = 'block';
+        } else {
+            loadMoreContainer.style.display = 'none';
+        }
+    }
+    
+    loadMore() {
+        const currentLength = this.loadedPhotos.length;
+        const newPhotos = this.photos.slice(currentLength, currentLength + this.photosPerLoad);
+        
+        this.loadedPhotos = [...this.loadedPhotos, ...newPhotos];
+        this.renderGallery();
+    }
+    
+    openModal(photo) {
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalCaption = document.getElementById('modalCaption');
+        
+        modalImage.src = photo.url;
+        modalCaption.textContent = photo.caption;
+        modal.classList.add('active');
+    }
+    
+    setupEventListeners() {
+        // Load more button
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        if (loadMoreBtn) {
+            loadMoreBtn.addEventListener('click', () => this.loadMore());
+        }
+        
+        // Modal close
+        const modalClose = document.getElementById('modalClose');
+        const modal = document.getElementById('imageModal');
+        
+        modalClose.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+        
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+    }
+    
+    showError() {
+        const galleryContainer = document.getElementById('telegramGallery');
+        const loadingIndicator = document.getElementById('galleryLoading');
+        
+        if (loadingIndicator) {
+            loadingIndicator.style.display = 'none';
+        }
+        
+        galleryContainer.innerHTML = `
+            <div class="gallery-error">
+                <h3>Unable to load gallery</h3>
+                <p>The GitHub Action might not have run yet. Please try again later.</p>
+                <button class="btn" onclick="location.reload()">Refresh Page</button>
+            </div>
+        `;
+    }
+}
+
+// Initialize Telegram Gallery when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, initializing Telegram Gallery...');
+    
+    // Initialize Telegram Gallery
+    const telegramGallery = new TelegramGallery();
+    telegramGallery.init();
+    
+    // Keep your existing gallery tab functionality
+    const galleryTabBtns = document.querySelectorAll('.gallery-tab-btn');
+    const galleryContents = document.querySelectorAll('.gallery-content');
+    
+    galleryTabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const galleryId = btn.getAttribute('data-gallery');
+            
+            galleryTabBtns.forEach(b => b.classList.remove('active'));
+            galleryContents.forEach(c => c.classList.remove('active'));
+            
+            btn.classList.add('active');
+            document.getElementById(galleryId).classList.add('active');
+        });
+    });
+});
     </script>
 </body>
 </html>

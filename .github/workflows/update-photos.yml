@@ -19,10 +19,29 @@ jobs:
         node-version: '18'
         
     - name: Install dependencies
-      run: npm install node-fetch
+      run: npm install node-fetch@2.6.7
       
+    - name: Debug environment
+      run: |
+        echo "Bot token starts with: ${TELEGRAM_BOT_TOKEN:0:10}..."
+        echo "Channel ID: $TELEGRAM_CHANNEL_ID"
+        
     - name: Fetch photos from Telegram
       run: node .github/scripts/fetch-photos.js
+      env:
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+      
+    - name: Check if photos were found
+      run: |
+        if [ -f "data/photos.json" ]; then
+          echo "Photos file exists"
+          echo "File size: $(wc -c < data/photos.json) bytes"
+          echo "Photo count: $(jq length data/photos.json)"
+        else
+          echo "Photos file not found"
+          exit 1
+        fi
       
     - name: Commit and push changes
       run: |

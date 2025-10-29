@@ -8,6 +8,7 @@
     "fetch-photos": "node .github/scripts/telegram-fetch.js"
   },
   "dependencies": {
+    "node": "^18.20.8",
     "https": "^16.14.2"
   },
   "devDependencies": {

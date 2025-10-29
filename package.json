@@ -1,12 +1,16 @@
 {
-  "name": "brahmakumaris-durg",
+  "name": "brahmakumarisdurg",
   "version": "1.0.0",
   "description": "Brahmakumaris Durg Website",
   "main": "index.html",
   "scripts": {
-    "test": "node .github/scripts/test-telegram.js",
+    "test": "node .github/scripts/telegram-fetch.js",
     "fetch-photos": "node .github/scripts/telegram-fetch.js"
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "https": "^16.14.2"
+  },
+  "devDependencies": {
+    "nodemon": "^16.14.2"
+  }
 }

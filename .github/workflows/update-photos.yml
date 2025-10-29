@@ -21,36 +21,172 @@ jobs:
     - name: Create data directory
       run: mkdir -p data
       
+    - name: Install dependencies
+      run: npm install
+      
     - name: Test Telegram API connection
       run: |
         curl -s "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/getMe" | jq .
         
     - name: Fetch photos from Telegram
       run: |
-        node .github/scripts/telegram-fetch.js
-      env:
-        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
-      
-    - name: Verify photos file
-      run: |
-        if [ -f "data/photos.json" ]; then
-          echo "Photos file exists"
-          echo "File size: $(wc -c < data/photos.json) bytes"
-          echo "Photo count: $(jq length data/photos.json || echo 0)"
-        else
-          echo "Photos file not found"
-          exit 1
-        fi
-      
-    - name: Commit and push changes
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add data/photos.json
-        if git diff --staged --quiet; then
-          echo "No changes to commit"
-        else
-          git commit -m "Update photos from Telegram ($(date))"
-          git push
-        fi
+        node -e "
+        const https = require('https');
+        const fs = require('fs');
+        const path = require('path');
+        
+        // Inline script to fetch photos
+        const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
+        const CHANNEL_ID = process.env.TELEGRAM_CHANNEL_ID;
+        const OUTPUT_DIR = 'data';
+        const OUTPUT_FILE = path.join(OUTPUT_DIR, 'photos.json');
+        
+        function ensureDirectoryExists(dirPath) {
+          if (!fs.existsSync(dirPath)) {
+            fs.mkdirSync(dirPath, { recursive: true });
+        }
+        
+        async function httpsRequest(url) {
+          return new Promise((resolve, reject) => {
+            const request = https.get(url, (response) => {
+              let data = '';
+              
+              response.on('data', (chunk) => {
+                  data += chunk;
+              });
+              
+              response.on('end', () => {
+                  try {
+                      resolve(JSON.parse(data));
+                  } catch (error) {
+                      reject(new Error(`JSON parsing error: ${error.message}`);
+                  }
+              });
+          });
+          
+          request.on('error', (error) => {
+              reject(new Error(`Request error: ${error.message}`));
+          });
+          
+          request.setTimeout(10000, () => {
+              request.destroy();
+              reject(new Error('Request timeout'));
+          });
+        }
+        
+        async function fetchPhotos() {
+          try {
+              // Validate environment variables
+              if (!BOT_TOKEN) {
+                  throw new Error('TELEGRAM_BOT_TOKEN environment variable is not set');
+              }
+              
+              if (!CHANNEL_ID) {
+                  throw new Error('TELEGRAM_CHANNEL_ID environment variable is not set');
+              }
+              
+              console.log('Starting Telegram photo fetch...');
+              console.log('Bot token:', BOT_TOKEN.substring(0, 10) + '...');
+              console.log('Channel ID:', CHANNEL_ID);
+              
+              // Step 1: Verify bot token
+              console.log('Step 1: Verifying bot token...');
+              const botData = await httpsRequest(`https://api.telegram.org/bot${BOT_TOKEN}/getMe`);
+              
+              if (!botData.ok) {
+                  throw new Error(`Bot verification failed: ${botData.description}`);
+              }
+              
+              console.log(`✓ Bot verified: ${botData.result.username} (${botData.result.first_name})`);
+              
+              // Step 2: Get updates from Telegram
+              console.log('Step 2: Fetching updates...');
+              const updatesData = await httpsRequest(`https://api.telegram.org/bot${BOT_TOKEN}/getUpdates?limit=100`);
+              
+              if (!updatesData.ok) {
+                  throw new Error(`Failed to fetch updates: ${updatesData.description}`);
+              }
+              
+              console.log(`✓ Received ${updatesData.result.length} updates`);
+              
+              // Step 3: Filter messages with photos from the specified channel
+              const photoMessages = updatesData.result.filter(update => {
+                  if (!update.message || !update.message.photo) return false;
+                  
+                  // Check if message is from the correct channel
+                  const chatId = update.message.chat.id.toString();
+                  const targetChatId = CHANNEL_ID.replace('@', '').replace('-100', '');
+                  
+                  return chatId === targetChatId || chatId === '-' + targetChatId;
+              });
+              
+              console.log(`✓ Found ${photoMessages.length} photo messages from channel`);
+              
+              if (photoMessages.length === 0) {
+                  console.log('No photo messages found in the channel');
+                  ensureDirectoryExists(OUTPUT_DIR);
+                  fs.writeFileSync(OUTPUT_FILE, JSON.stringify([], null, 2));
+                  console.log('✓ Created empty photos file');
+                  return;
+              }
+              
+              // Step 4: Extract photo information
+              console.log('Step 4: Extracting photo information...');
+              const photos = [];
+              
+              for (const [index, msg] of photoMessages.entries()) {
+                  try {
+                      const photoArray = msg.message.photo;
+                      const largestPhoto = photoArray[photoArray.length - 1];
+                      const caption = msg.message.caption || '';
+                      
+                      // Get file URL
+                      const fileData = await httpsRequest(`https://api.telegram.org/bot${BOT_TOKEN}/getFile?file_id=${largestPhoto.file_id}`);
+                      
+                      if (fileData.ok) {
+                          const fileUrl = `https://api.telegram.org/file/bot${BOT_TOKEN}/${fileData.result.file_path}`;
+                          
+                          photos.push({
+                              id: largestPhoto.file_id,
+                              url: fileUrl,
+                              caption: caption,
+                              date: msg.message.date,
+                              message_id: msg.message_id
+                          });
+                          
+                          console.log(`✓ Processed photo ${index + 1}/${photoMessages.length}`);
+                      } else {
+                          console.error(`Failed to get file info for photo ${index + 1}: ${fileData.description}`);
+                      }
+                  } catch (error) {
+                      console.error(`Error processing photo ${index + 1}: ${error.message}`);
+                  }
+              }
+              
+              // Sort by date (newest first)
+              photos.sort((a, b) => b.date - a.date);
+              
+              // Step 5: Save photos to JSON file
+              console.log('Step 5: Saving photos to file...');
+              ensureDirectoryExists(OUTPUT_DIR);
+              fs.writeFileSync(OUTPUT_FILE, JSON.stringify(photos, null, 2));
+              
+              console.log(`✓ Successfully saved ${photos.length} photos to ${OUTPUT_FILE}`);
+              
+              // Step 6: Create a backup
+              const backupFile = path.join(OUTPUT_DIR, `photos-backup-${Date.now()}.json`);
+              fs.writeFileSync(backupFile, JSON.stringify(photos, null, 2));
+              console.log(`✓ Created backup file: ${backupFile}`);
+              
+          } catch (error) {
+              console.error('Error in fetchPhotos:', error.message);
+              throw error;
+          }
+        }
+        
+        fetchPhotos().catch(error => {
+            console.error('Script failed:', error.message);
+            process.exit(1);
+        }
+        
+        fetchPhotos();

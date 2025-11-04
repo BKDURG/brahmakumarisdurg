@@ -327,7 +327,7 @@ nav a:hover::after {
 }
 
 .main-navigation.is-open {
-    transform: translateX(-5px);
+    transform: translateX(0);
 }
 
 .main-navigation.is-open:hover {
@@ -1122,6 +1122,10 @@ footer {
 }
 
 @media (min-width: 768px) {
+    .preloader {
+        display: none !important;
+    }
+
     .mobile-menu-toggle {
         display: none;
     }

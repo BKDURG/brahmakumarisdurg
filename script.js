@@ -1,36 +1,3 @@
-// Mobile menu functionality
-(function() {
-    const toggleButton = document.querySelector('.mobile-menu-toggle');
-    const mainNav = document.querySelector('.main-navigation');
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    const body = document.body;
-
-    function toggleMenu() {
-        const isOpen = mainNav.classList.toggle('is-open');
-        toggleButton.classList.toggle('is-open');
-        toggleButton.setAttribute('aria-expanded', isOpen);
-        body.style.overflow = isOpen ? 'hidden' : '';
-    }
-
-    if (toggleButton) {
-        toggleButton.addEventListener('click', toggleMenu);
-    }
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (mainNav.classList.contains('is-open')) {
-                toggleMenu();
-            }
-        });
-    });
-
-    window.addEventListener('resize', () => {
-        if (window.innerWidth > 767 && mainNav.classList.contains('is-open')) {
-            toggleMenu();
-        }
-    });
-})();
-
 // Daily Quotes
 (function() {
     const quotes = [

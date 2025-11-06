@@ -192,25 +192,11 @@ header {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(10px);
     padding: 1rem 2rem;
-    position: sticky;
+    position: absolute;
     width: 100%;
     top: 0;
     z-index: 1000;
     box-shadow: var(--shadow);
-}
-
-.header-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .logo {
@@ -228,138 +214,6 @@ header {
 .logo h1 {
     font-size: 1.5rem;
     margin-bottom: 0;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-nav a {
-    color: #fff;
-    font-weight: 500;
-    position: relative;
-    transform: translateY(-2px);
-}
-
-nav a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: rgb(243,82,82);
-    transition: var(--transition);
-}
-
-nav a:hover::after {
-    width: 100%;
-    background: #ebc251;
-    transform: translateY(-2px);
-}
-
-/* Mobile Menu */
-.mobile-menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: .5rem;
-    z-index: 1001;
-}
-
-.hamburger {
-    display: block;
-    position: relative;
-    width: 25px;
-    height: 3px;
-    background: #fff;
-    transition: var(--transition);
-}
-
-.hamburger::before, .hamburger::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 3px;
-    background: #fff;
-    transition: var(--transition);
-}
-
-.hamburger::before {
-    transform: translateY(-8px);
-}
-
-.hamburger::after {
-    transform: translateY(8px);
-    transition-duration: .8s ease-in-out;
-}
-
-.mobile-menu-toggle.is-open .hamburger {
-    background: transparent;
-    transition: all .4s linear;
-}
-
-.mobile-menu-toggle.is-open .hamburger::before {
-    transform: rotate(45deg);
-    transition: all .8s linear;
-}
-
-.mobile-menu-toggle.is-open .hamburger::after {
-    transform: rotate(-45deg);
-}
-
-.main-navigation {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 280px;
-    height: 100vh;
-    background-color: #2c3b6ef6;
-    color: #2c3e50;
-    border-radius: 24px;
-    padding-top: 5rem;
-    transform: translateX(100%);
-    transition: .3s ease-in-out;
-    box-shadow: -2px 0 5px rgba(0,0,0,.1);
-}
-
-.main-navigation.is-open {
-    transform: translateX(-5px);
-}
-
-.main-navigation.is-open:hover {
-    background-color: #2c3b6ef6;
-    border-radius: 15px;
-}
-
-.nav-menu {
-    list-style: none;
-    color: #473775;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-menu li {
-    border-bottom: 1.5px solid #dfb288;
-    color: #2c3e50;
-}
-
-.nav-menu a {
-    display: block;
-    padding: 1rem 2rem;
-    text-decoration: none;
-    color: #fffffff6;
-    font-weight: 500;
-    transition: background-color var(--transition);
-}
-
-.nav-menu a:hover {
-    background-color: #7c4d20;
-    border-radius: 14px;
-    color: #fff;
 }
 
 /* Daily Quote Section */
@@ -1037,10 +891,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .mobile-menu-toggle {
-        display: block;
-    }
-
     header {
         padding: 1rem;
     }
@@ -1092,11 +942,6 @@ footer {
     .social-links {
         justify-content: center;
     }
-
-    .nav-menu {
-        flex-direction: column;
-        gap: 1rem;
-    }
 }
 
 @media (max-width: 576px) {
@@ -1121,33 +966,63 @@ footer {
     }
 }
 
-@media (min-width: 768px) {
-    .mobile-menu-toggle {
-        display: none;
+/* ---------- Minimal patch: Fix x-scroll from mobile menu & preloader mobile view ---------- */
+
+/* Hard lock horizontal overflow (safe mobile-first fix) */
+html, body {
+    overflow-x: hidden; /* prevent any horizontal scroll created by transforms/long text */
+}
+
+/* ---------- Preloader mobile responsiveness & interaction fix ---------- */
+.preloader {
+    padding: 1rem;                          /* small internal padding on tiny devices */
+    z-index: 10000;                         /* ensure it's on top (kept high) */
+}
+
+/* make preloader content responsive */
+.preloader-content {
+    width: min(92%, 420px);                 /* fit smaller screens gracefully */
+    max-width: 420px;
+    padding: 1rem 1rem;
+}
+
+/* responsive logo size for very small screens */
+.preloader-logo img {
+    width: clamp(48px, 16vw, 100px);
+    height: auto;
+}
+
+/* smaller loader on small devices */
+.loader {
+    width: clamp(30px, 10vw, 60px);
+    height: auto;
+    aspect-ratio: 1/1;
+}
+
+/* keep progress bar visible but constrained */
+.preloader-progress {
+    width: 100%;
+    max-width: 92%;
+    margin: 0.9rem auto;
+}
+
+/* When fading out, make sure it doesn't block touches */
+.preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;   /* allow interaction after fade-out — avoids preloader blocking touches on mobile */
+}
+
+/* reduce excessive text size on tiny screens if necessary */
+@media (max-width: 480px) {
+    .preloader-text h2 {
+        font-size: 1.4rem; /* modestly smaller on very small phones */
     }
-    
-    .main-navigation {
-        position: static;
-        width: auto;
-        height: auto;
-        background: none;
-        padding: 0;
-        transform: none;
-        box-shadow: none;
+    .preloader-text p {
+        font-size: .9rem;
     }
-    
-    .nav-menu {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-    
-    .nav-menu li {
-        border: none;
-    }
-    
-    .nav-menu a {
-        padding: .5rem 1rem;
-        color: #fff;
+    .preloader-quote {
+        font-size: .8rem;
+        max-width: 280px;
     }
 }
